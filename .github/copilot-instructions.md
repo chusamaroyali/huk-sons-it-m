@@ -1,7 +1,7 @@
 # GitHub Copilot Instructions
 
 ## Project Overview
-This is a React application built with Vite, TypeScript, Tailwind CSS, and Supabase. It uses a custom routing implementation and Shadcn UI components.
+This is a React application built with Vite, TypeScript, Tailwind CSS, and Appwrite. It uses a custom routing implementation and Shadcn UI components.
 
 ## Architecture & Routing (CRITICAL)
 **Do NOT use `react-router-dom`.** This project uses a custom event-based routing system.
@@ -35,7 +35,7 @@ This is a React application built with Vite, TypeScript, Tailwind CSS, and Supab
 ## Development Workflow
 - **Run Dev Server**: `npm run dev`
 - **Build**: `npm run build`
-- **Supabase**: Client configuration is in `src/utils/supabase/`.
+- **Appwrite**: Client configuration is in `src/utils/appwrite/`.
 
 ## Common Patterns
 - **Links**: Do not use `<a>` tags for internal navigation. Use `button` with `onClick={() => onNavigate('page-name')}`.

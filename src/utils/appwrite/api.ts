@@ -26,7 +26,7 @@ export const api = {
         ID.unique(),
         {
           email,
-          status: 'active',
+          // status: 'active', // Removed to prevent schema errors if attribute doesn't exist
         }
       );
     } catch (error) {
