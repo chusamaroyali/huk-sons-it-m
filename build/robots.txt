@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://huksonsit.com/sitemap.xml
