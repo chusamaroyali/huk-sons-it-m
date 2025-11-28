@@ -4,8 +4,9 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Card } from './ui/card';
 import { Mail, MapPin, Globe } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { COMPANY_INFO, ENGAGEMENT_TERMS } from '../utils/data';
+import { api } from '../utils/appwrite/api';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -21,8 +22,12 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await api.createContact({
+        firstName: formData.name,
+        email: formData.email,
+        company: formData.company,
+        message: formData.message
+      });
       
       toast.success(
         `✅ Thank you! Your message has been received. We'll contact you at ${formData.email} within 24 hours.`,
@@ -37,8 +42,9 @@ export function Contact() {
       }, 500);
       
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (error) {
-      toast.error('Unable to submit form. Please contact us directly at ' + COMPANY_INFO.email);
+    } catch (error: any) {
+      console.error('Contact form error:', error);
+      toast.error(error.message || 'Unable to submit form. Please contact us directly at ' + COMPANY_INFO.email);
     } finally {
       setIsSubmitting(false);
     }

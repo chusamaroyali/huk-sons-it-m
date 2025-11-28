@@ -33,9 +33,9 @@ export function Footer() {
       
       toast.success('Successfully subscribed to our newsletter!');
       setEmail('');
-    } catch (error) {
+    } catch (error: any) {
       console.error('Newsletter subscription error:', error);
-      toast.error('An error occurred. Please try again later.');
+      toast.error(error.message || 'An error occurred. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
