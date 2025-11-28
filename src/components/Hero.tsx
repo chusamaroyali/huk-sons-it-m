@@ -4,9 +4,11 @@ import { ArrowRight, Shield, Zap, CheckCircle2, TrendingUp } from 'lucide-react'
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
+import { useIsMobile } from './ui/use-mobile';
 
 export function Hero() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
 
   const handleGetStarted = () => {
     navigate('/get-started');
@@ -21,20 +23,26 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F8FAFC] dark:bg-[#0E1116] transition-colors duration-300">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(to right, #19B394 1px, transparent 1px),
-            linear-gradient(to bottom, #19B394 1px, transparent 1px)
-          `,
-          backgroundSize: '80px 80px'
-        }} />
-      </div>
+      {/* Animated Background Grid - Desktop Only */}
+      {!isMobile && (
+        <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(to right, #19B394 1px, transparent 1px),
+              linear-gradient(to bottom, #19B394 1px, transparent 1px)
+            `,
+            backgroundSize: '80px 80px'
+          }} />
+        </div>
+      )}
 
-      {/* Gradient Orbs */}
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#19B394]/5 rounded-full blur-[120px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-[#19B394]/3 rounded-full blur-[100px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '10s' }} />
+      {/* Gradient Orbs - Desktop Only */}
+      {!isMobile && (
+        <>
+          <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#19B394]/5 rounded-full blur-[120px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '8s' }} />
+          <div className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-[#19B394]/3 rounded-full blur-[100px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '10s' }} />
+        </>
+      )}
 
       {/* Main Content */}
       <div className="container-enterprise relative z-10 py-20 md:py-32">
