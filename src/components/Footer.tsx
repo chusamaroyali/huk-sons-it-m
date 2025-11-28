@@ -320,6 +320,7 @@ export function Footer() {
                   className="w-full bg-white dark:bg-white/5"
                   disabled={isSubmitting}
                   required
+                  aria-label="Email address for newsletter"
                 />
                 <Button
                   type="submit"

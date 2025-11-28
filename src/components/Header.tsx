@@ -69,6 +69,7 @@ export function Header() {
           <button
             onClick={() => handleNavigate('/')}
             className="flex flex-col items-start group relative z-[110]"
+            aria-label="HUK SONS IT Home"
           >
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-[#19B394] rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
@@ -99,6 +100,8 @@ export function Header() {
             >
               <button
                 onClick={() => handleNavigate('/solutions')}
+                aria-expanded={activeDropdown === 'solutions' ? "true" : "false"}
+                aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive('/solutions')
                     ? 'text-[#19B394] bg-[#19B394]/10'
@@ -139,6 +142,8 @@ export function Header() {
             >
               <button
                 onClick={() => handleNavigate('/resources')}
+                aria-expanded={activeDropdown === 'resources' ? "true" : "false"}
+                aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive('/resources')
                     ? 'text-[#19B394] bg-[#19B394]/10'
@@ -177,6 +182,8 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
+                aria-expanded={activeDropdown === 'company' ? "true" : "false"}
+                aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   ['/about', '/why-us', '/leadership'].some(path => isActive(path))
                     ? 'text-[#19B394] bg-[#19B394]/10'
@@ -249,6 +256,8 @@ export function Header() {
             <button
               className="text-[#0F6B4D] dark:text-[#F8FAFC] p-2 hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5 rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen ? "true" : "false"}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

@@ -65,10 +65,7 @@ export function Hero() {
 
               {/* Main Headline */}
               <div className="space-y-4">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
+                <h1
                   className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight"
                 >
                   <span className="bg-gradient-to-r from-[#0F6B4D] dark:from-[#F8FAFC] via-[#0F6B4D] dark:via-[#F8FAFC] to-[#0F6B4D]/60 dark:to-[#F8FAFC]/60 bg-clip-text text-transparent block">
@@ -80,18 +77,15 @@ export function Hero() {
                   <span className="bg-gradient-to-r from-[#19B394] to-[#19B394]/60 bg-clip-text text-transparent block mt-2">
                     Built for Scale.
                   </span>
-                </motion.h1>
+                </h1>
               </div>
 
               {/* Subheadline */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+              <p
                 className="text-xl md:text-2xl text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
               >
                 Global engineering firm specializing in cloud infrastructure, AI automation, and enterprise transformation.
-              </motion.p>
+              </p>
 
               {/* Trust Metrics */}
               <motion.div
