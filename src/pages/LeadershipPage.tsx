@@ -8,12 +8,12 @@ import { motion } from 'motion/react';
 import { Card } from '../components/ui/card';
 
 const leadershipStats = [
-  { icon: TrendingUp, value: '17+', label: 'Years Experience', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
-  { icon: Users, value: '200+', label: 'Enterprises Led', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
-  { icon: Target, value: '32+', label: 'Industries', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
-  { icon: Sparkles, value: '95%+', label: 'Success Rate', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
-  { icon: Globe2, value: '3', label: 'Continents', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
-  { icon: Star, value: '100%', label: 'Senior-Led', gradient: 'from-[#00D3A9] to-[#00D3A9]/60' },
+  { icon: TrendingUp, value: '17+', label: 'Years Experience', gradient: 'from-accent to-accent/60' },
+  { icon: Users, value: '200+', label: 'Enterprises Led', gradient: 'from-accent to-accent/60' },
+  { icon: Target, value: '32+', label: 'Industries', gradient: 'from-accent to-accent/60' },
+  { icon: Sparkles, value: '95%+', label: 'Success Rate', gradient: 'from-accent to-accent/60' },
+  { icon: Globe2, value: '3', label: 'Continents', gradient: 'from-accent to-accent/60' },
+  { icon: Star, value: '100%', label: 'Senior-Led', gradient: 'from-accent to-accent/60' },
 ];
 
 const experience = [
@@ -59,37 +59,37 @@ const expertise = [
   {
     category: 'Cloud Platforms',
     icon: Globe2,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['AWS (Advanced)', 'Google Cloud Platform', 'Microsoft Azure', 'Multi-cloud Architecture', 'Hybrid Cloud Solutions'],
   },
   {
     category: 'DevOps & Automation',
     icon: Zap,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['Terraform', 'Ansible', 'Jenkins', 'GitLab CI/CD', 'GitHub Actions'],
   },
   {
     category: 'Container & Orchestration',
     icon: Target,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['Kubernetes', 'Docker', 'Helm', 'Container Security', 'Service Mesh'],
   },
   {
     category: 'Data Engineering',
     icon: TrendingUp,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['Hadoop', 'Kafka', 'Snowflake', 'BigQuery', 'ETL/ELT Pipelines'],
   },
   {
     category: 'Programming & Scripting',
     icon: Code,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['Python', 'Bash', 'Go', 'Infrastructure as Code', 'API Development'],
   },
   {
     category: 'Monitoring & Observability',
     icon: Sparkles,
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     skills: ['Datadog', 'New Relic', 'Prometheus', 'Grafana', 'ELK Stack'],
   },
 ];
@@ -143,7 +143,7 @@ export function LeadershipPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-main transition-colors duration-300">
       <SEOHead
         title="Leadership | Usama Idrees - Founder & Principal Architect | HUK SONS IT"
         description="Meet Usama Idrees, Founder & Principal Architect of HUK SONS IT. 17+ years of DevOps/DataOps engineering expertise across IT, Banking, and Education sectors. Senior-level leadership driving every enterprise engagement."
@@ -155,17 +155,17 @@ export function LeadershipPage() {
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
+            linear-gradient(to right, var(--brand-accent) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--brand-accent) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }} />
       </div>
       
       {/* Gradient Orbs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-1/3 left-0 w-[500px] h-[500px] bg-[#00D3A9]/3 dark:bg-[#00D3A9]/8 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
-      <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-[#00D3A9]/4 dark:bg-[#00D3A9]/6 rounded-full blur-[90px] animate-pulse pointer-events-none" style={{ animationDuration: '15s' }} />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-1/3 left-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[100px] animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
+      <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-accent/4 rounded-full blur-[90px] animate-pulse pointer-events-none" style={{ animationDuration: '15s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
@@ -177,9 +177,9 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="flex justify-center mb-8"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full">
-                <Users className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-sm uppercase tracking-wider text-[#00D3A9]">Leadership Excellence</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-accent/10 border border-accent/30 rounded-full">
+                <Users className="w-5 h-5 text-accent" />
+                <span className="text-sm uppercase tracking-wider text-accent">Leadership Excellence</span>
               </div>
             </motion.div>
 
@@ -189,11 +189,11 @@ export function LeadershipPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center mb-8"
             >
-              <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-heading to-heading/60 bg-clip-text text-transparent">
                 Meet the Architect Behind
               </span>
               <br />
-              <span className="bg-gradient-to-r from-[#00D3A9] to-[#00D3A9]/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent to-accent/60 bg-clip-text text-transparent">
                 Your Transformation
               </span>
             </motion.h1>
@@ -202,7 +202,7 @@ export function LeadershipPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl text-center text-[#0A0D12]/70 dark:text-white/70 max-w-4xl mx-auto leading-relaxed mb-12"
+              className="text-xl md:text-2xl text-center text-muted max-w-4xl mx-auto leading-relaxed mb-12"
             >
               17+ years of enterprise engineering excellence. Every project personally led by senior-level expertise—no delegation, no junior teams, just proven results.
             </motion.p>
@@ -216,7 +216,7 @@ export function LeadershipPage() {
             >
               <Button
                 onClick={handleScheduleCall}
-                className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-8 py-6 text-lg group"
+                className="bg-accent hover:bg-accent/90 text-white px-8 py-6 text-lg group"
               >
                 <Calendar className="mr-2 w-5 h-5" />
                 Schedule Strategy Call
@@ -225,7 +225,7 @@ export function LeadershipPage() {
               <Button
                 onClick={handleLinkedIn}
                 variant="outline"
-                className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-8 py-6 text-lg"
+                className="border-2 border-heading text-heading hover:bg-heading/5 px-8 py-6 text-lg"
               >
                 <Linkedin className="mr-2 w-5 h-5" />
                 Connect on LinkedIn
@@ -233,14 +233,14 @@ export function LeadershipPage() {
             </motion.div>
 
             <div className="flex justify-center mt-16">
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#00D3A9] to-transparent" />
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Grid - 6 Cards */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-alt">
         <div className="container-enterprise relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -249,10 +249,10 @@ export function LeadershipPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-4">
-              Leadership by the <span className="text-[#00D3A9]">Numbers</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading mb-4">
+              Leadership by the <span className="text-accent">Numbers</span>
             </h2>
-            <p className="text-lg text-[#0A0D12]/70 dark:text-white/70">
+            <p className="text-lg text-muted">
               Proven track record of enterprise excellence
             </p>
           </motion.div>
@@ -266,12 +266,12 @@ export function LeadershipPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 text-center group min-h-[180px] flex flex-col justify-center">
-                  <div className="w-12 h-12 bg-[#00D3A9]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-6 h-6 text-[#00D3A9]" />
+                <Card className="p-6 bg-card border-2 border-subtle hover:border-accent transition-all duration-300 text-center group min-h-[180px] flex flex-col justify-center">
+                  <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <div className="text-3xl md:text-4xl text-[#00D3A9] mb-2">{stat.value}</div>
-                  <div className="text-sm text-[#0A0D12]/70 dark:text-white/70">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl text-accent mb-2">{stat.value}</div>
+                  <div className="text-sm text-muted">{stat.label}</div>
                 </Card>
               </motion.div>
             ))}
@@ -290,8 +290,8 @@ export function LeadershipPage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-4">
-                Founder & <span className="text-[#00D3A9]">Principal Architect</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading mb-4">
+                Founder & <span className="text-accent">Principal Architect</span>
               </h2>
             </motion.div>
 
@@ -304,34 +304,34 @@ export function LeadershipPage() {
                 transition={{ duration: 0.6 }}
                 className="md:col-span-3"
               >
-                <Card className="p-8 md:p-10 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300">
+                <Card className="p-8 md:p-10 bg-card border-2 border-subtle hover:border-accent transition-all duration-300">
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-20 h-20 bg-gradient-to-br from-[#00D3A9]/20 to-[#00D3A9]/5 border-2 border-[#00D3A9]/30 rounded-2xl flex items-center justify-center text-4xl text-[#00D3A9]">
+                    <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-accent/5 border-2 border-accent/30 rounded-2xl flex items-center justify-center text-4xl text-accent">
                       UI
                     </div>
                     <div>
-                      <h3 className="text-3xl md:text-4xl text-[#0A0D12] dark:text-white mb-1">Usama Idrees</h3>
-                      <p className="text-xl text-[#00D3A9]">Founder & Principal Architect</p>
+                      <h3 className="text-3xl md:text-4xl text-heading mb-1">Usama Idrees</h3>
+                      <p className="text-xl text-accent">Founder & Principal Architect</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-6 text-lg text-[#0A0D12]/80 dark:text-white/80 mb-8">
+                  <div className="space-y-6 text-lg text-body mb-8">
                     <p className="leading-relaxed">
-                      A veteran DevOps/DataOps Engineer with over <strong className="text-[#00D3A9]">17 years</strong> of cross-sector experience spanning IT, Banking, and Education. Usama has personally led <strong className="text-[#00D3A9]">200+ enterprise transformations</strong>, modernizing mission-critical infrastructure with technologies including Hadoop, Kafka, Terraform, Jenkins, and comprehensive automation frameworks.
+                      A veteran DevOps/DataOps Engineer with over <strong className="text-accent">17 years</strong> of cross-sector experience spanning IT, Banking, and Education. Usama has personally led <strong className="text-accent">200+ enterprise transformations</strong>, modernizing mission-critical infrastructure with technologies including Hadoop, Kafka, Terraform, Jenkins, and comprehensive automation frameworks.
                     </p>
                     <p className="leading-relaxed">
-                      His leadership philosophy centers on blending <strong className="text-[#00D3A9]">engineering precision</strong> with <strong className="text-[#00D3A9]">business scalability</strong>, ensuring every technical decision drives measurable ROI. Usama's hands-on approach means clients work directly with senior-level expertise—no delegation, no intermediaries, just proven results.
+                      His leadership philosophy centers on blending <strong className="text-accent">engineering precision</strong> with <strong className="text-accent">business scalability</strong>, ensuring every technical decision drives measurable ROI. Usama's hands-on approach means clients work directly with senior-level expertise—no delegation, no intermediaries, just proven results.
                     </p>
                     <p className="leading-relaxed">
-                      Under his guidance, HUK SONS IT has helped global enterprises reduce cloud costs by <strong className="text-[#00D3A9]">30-60%</strong>, automate critical workflows, achieve <strong className="text-[#00D3A9]">99.9% uptime</strong>, and build data infrastructures that support sustainable, long-term growth.
+                      Under his guidance, HUK SONS IT has helped global enterprises reduce cloud costs by <strong className="text-accent">30-60%</strong>, automate critical workflows, achieve <strong className="text-accent">99.9% uptime</strong>, and build data infrastructures that support sustainable, long-term growth.
                     </p>
                   </div>
 
                   {/* Contact Buttons */}
-                  <div className="flex flex-wrap gap-4 pt-6 border-t border-[#0A0D12]/10 dark:border-white/10">
+                  <div className="flex flex-wrap gap-4 pt-6 border-t border-subtle">
                     <Button
                       onClick={() => window.location.href = 'mailto:info@huksons.com'}
-                      className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-6 py-3 group"
+                      className="bg-accent hover:bg-accent/90 text-white px-6 py-3 group"
                     >
                       <Mail className="w-5 h-5 mr-2" />
                       Email Directly
@@ -339,7 +339,7 @@ export function LeadershipPage() {
                     <Button
                       onClick={handleLinkedIn}
                       variant="outline"
-                      className="border-2 border-[#0A0D12]/20 dark:border-white/20 text-[#0A0D12] dark:text-white hover:border-[#00D3A9] px-6 py-3"
+                      className="border-2 border-subtle text-heading hover:border-accent px-6 py-3"
                     >
                       <Linkedin className="w-5 h-5 mr-2" />
                       Connect
@@ -347,7 +347,7 @@ export function LeadershipPage() {
                     <Button
                       onClick={handleScheduleCall}
                       variant="outline"
-                      className="border-2 border-[#0A0D12]/20 dark:border-white/20 text-[#0A0D12] dark:text-white hover:border-[#00D3A9] px-6 py-3"
+                      className="border-2 border-subtle text-heading hover:border-accent px-6 py-3"
                     >
                       <Calendar className="w-5 h-5 mr-2" />
                       Schedule Call
@@ -364,9 +364,9 @@ export function LeadershipPage() {
                 transition={{ duration: 0.6 }}
                 className="md:col-span-2 space-y-6"
               >
-                <Card className="p-8 bg-gradient-to-br from-[#00D3A9]/10 to-transparent border-2 border-[#00D3A9]/20 rounded-2xl text-center hover:shadow-2xl hover:shadow-[#00D3A9]/20 transition-all duration-500 min-h-[100px] flex flex-col justify-center">
-                  <div className="text-6xl text-[#00D3A9] mb-2">17+</div>
-                  <div className="text-lg text-[#0A0D12] dark:text-white">Years of Excellence</div>
+                <Card className="p-8 bg-gradient-to-br from-accent/10 to-transparent border-2 border-accent/20 rounded-2xl text-center hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500 min-h-[100px] flex flex-col justify-center">
+                  <div className="text-6xl text-accent mb-2">17+</div>
+                  <div className="text-lg text-heading">Years of Excellence</div>
                 </Card>
 
                 {[
@@ -381,10 +381,10 @@ export function LeadershipPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                   >
-                    <Card className="p-6 bg-white/80 dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-xl hover:border-[#00D3A9]/40 hover:shadow-lg hover:shadow-[#00D3A9]/10 transition-all duration-300 text-center min-h-[100px] flex flex-col justify-center">
-                      <div className="text-3xl text-[#00D3A9] mb-1">{stat.value}</div>
-                      <div className="text-sm text-[#0A0D12] dark:text-white mb-1">{stat.label}</div>
-                      <div className="text-xs text-[#0A0D12]/60 dark:text-white/60">{stat.desc}</div>
+                    <Card className="p-6 bg-card border-2 border-subtle rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 text-center min-h-[100px] flex flex-col justify-center">
+                      <div className="text-3xl text-accent mb-1">{stat.value}</div>
+                      <div className="text-sm text-heading mb-1">{stat.label}</div>
+                      <div className="text-xs text-muted">{stat.desc}</div>
                     </Card>
                   </motion.div>
                 ))}
@@ -395,10 +395,10 @@ export function LeadershipPage() {
       </section>
 
       {/* CTA #1 - Book Technical Assessment */}
-      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent">
+      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-accent/10 via-accent/5 to-transparent">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#00D3A9]/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#00D3A9]/15 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent/15 rounded-full blur-3xl" />
         </div>
         
         <div className="container-enterprise relative z-10">
@@ -411,14 +411,14 @@ export function LeadershipPage() {
           >
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00D3A9]/20 border border-[#00D3A9]/40 rounded-full mb-6">
-                  <FileText className="w-4 h-4 text-[#00D3A9]" />
-                  <span className="text-sm text-[#00D3A9] uppercase tracking-wider">Complimentary</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full mb-6">
+                  <FileText className="w-4 h-4 text-accent" />
+                  <span className="text-sm text-accent uppercase tracking-wider">Complimentary</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-6">
-                  Get a Free <span className="text-[#00D3A9]">Technical Assessment</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-6">
+                  Get a Free <span className="text-accent">Technical Assessment</span>
                 </h2>
-                <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 mb-8 leading-relaxed">
+                <p className="text-xl text-muted mb-8 leading-relaxed">
                   Receive a comprehensive infrastructure audit, gap analysis, and transformation roadmap personally conducted by Usama. No sales pitch—just actionable insights.
                 </p>
                 <ul className="space-y-4 mb-8">
@@ -430,28 +430,28 @@ export function LeadershipPage() {
                     'Custom transformation roadmap'
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-[#00D3A9] flex-shrink-0 mt-0.5" />
-                      <span className="text-lg text-[#0A0D12]/80 dark:text-white/80">{item}</span>
+                      <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-lg text-body">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-4">
                   <Button
                     onClick={() => window.location.href = 'mailto:info@huksons.com?subject=Request Technical Assessment'}
-                    className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-10 py-7 text-xl group"
+                    className="bg-accent hover:bg-accent/90 text-white px-10 py-7 text-xl group"
                   >
                     <FileText className="mr-2 w-6 h-6" />
                     Request Assessment
                     <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
-                <p className="text-sm text-[#0A0D12]/50 dark:text-white/50 mt-4">
+                <p className="text-sm text-muted mt-4">
                   Available for enterprises with $20K+ transformation budgets
                 </p>
               </div>
 
-              <Card className="p-8 bg-white/90 dark:bg-white/[0.05] backdrop-blur-sm border-2 border-[#00D3A9]/30">
-                <h3 className="text-2xl text-[#0A0D12] dark:text-white mb-6">What You'll Receive:</h3>
+              <Card className="p-8 bg-card/90 backdrop-blur-sm border-2 border-accent/30">
+                <h3 className="text-2xl text-heading mb-6">What You'll Receive:</h3>
                 <div className="space-y-4">
                   {[
                     { icon: Target, title: '60-Min Consultation', desc: 'Direct with Usama Idrees' },
@@ -459,13 +459,13 @@ export function LeadershipPage() {
                     { icon: TrendingUp, title: 'ROI Projections', desc: 'Cost savings forecast' },
                     { icon: Calendar, title: 'Roadmap', desc: 'Phased implementation plan' }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-4 p-4 bg-[#0A0D12]/5 dark:bg-white/[0.02] rounded-lg">
-                      <div className="w-10 h-10 bg-[#00D3A9]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <item.icon className="w-5 h-5 text-[#00D3A9]" />
+                    <div key={idx} className="flex items-start gap-4 p-4 bg-alt rounded-lg">
+                      <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <item.icon className="w-5 h-5 text-accent" />
                       </div>
                       <div>
-                        <div className="text-[#0A0D12] dark:text-white mb-1">{item.title}</div>
-                        <div className="text-sm text-[#0A0D12]/60 dark:text-white/60">{item.desc}</div>
+                        <div className="text-heading mb-1">{item.title}</div>
+                        <div className="text-sm text-muted">{item.desc}</div>
                       </div>
                     </div>
                   ))}
@@ -477,7 +477,7 @@ export function LeadershipPage() {
       </section>
 
       {/* Professional Journey */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-alt">
         <div className="container-enterprise relative z-10">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -487,10 +487,10 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-4">
-                Professional <span className="text-[#00D3A9]">Journey</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-4">
+                Professional <span className="text-accent">Journey</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70">17+ years of enterprise engineering excellence</p>
+              <p className="text-xl text-muted">17+ years of enterprise engineering excellence</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -502,24 +502,24 @@ export function LeadershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-8 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-2xl hover:border-[#00D3A9]/40 hover:shadow-xl hover:shadow-[#00D3A9]/10 transition-all duration-300 h-full group">
+                  <Card className="p-8 bg-card border-2 border-subtle rounded-2xl hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 h-full group">
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-14 h-14 bg-[#00D3A9]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <item.icon className="w-7 h-7 text-[#00D3A9]" />
+                      <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <item.icon className="w-7 h-7 text-accent" />
                       </div>
-                      <span className="px-3 py-1 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full text-xs text-[#00D3A9]">
+                      <span className="px-3 py-1 bg-accent/10 border border-accent/30 rounded-full text-xs text-accent">
                         {item.period}
                       </span>
                     </div>
                     
-                    <h3 className="text-2xl text-[#0A0D12] dark:text-white mb-3">{item.title}</h3>
-                    <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6">{item.description}</p>
+                    <h3 className="text-2xl text-heading mb-3">{item.title}</h3>
+                    <p className="text-muted mb-6">{item.description}</p>
                     
                     <div className="space-y-2">
                       {item.highlights.map((highlight, hIdx) => (
                         <div key={hIdx} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#00D3A9] mt-2 flex-shrink-0" />
-                          <span className="text-sm text-[#0A0D12]/70 dark:text-white/70">{highlight}</span>
+                          <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                          <span className="text-sm text-muted">{highlight}</span>
                         </div>
                       ))}
                     </div>
@@ -542,10 +542,10 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-4">
-                Proven <span className="text-[#00D3A9]">Impact</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-4">
+                Proven <span className="text-accent">Impact</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70">
+              <p className="text-xl text-muted">
                 Measurable results across 200+ enterprise engagements
               </p>
             </motion.div>
@@ -559,10 +559,10 @@ export function LeadershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-8 bg-gradient-to-br from-white to-[#00D3A9]/5 dark:from-white/[0.03] dark:to-[#00D3A9]/5 border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 text-center group min-h-[200px] flex flex-col justify-center">
-                    <div className="text-5xl text-[#00D3A9] mb-3 group-hover:scale-110 transition-transform">{achievement.metric}</div>
-                    <div className="text-lg text-[#0A0D12] dark:text-white mb-2">{achievement.label}</div>
-                    <div className="text-sm text-[#0A0D12]/60 dark:text-white/60">{achievement.description}</div>
+                  <Card className="p-8 bg-gradient-to-br from-card to-accent/5 border-2 border-subtle hover:border-accent transition-all duration-300 text-center group min-h-[200px] flex flex-col justify-center">
+                    <div className="text-5xl text-accent mb-3 group-hover:scale-110 transition-transform">{achievement.metric}</div>
+                    <div className="text-lg text-heading mb-2">{achievement.label}</div>
+                    <div className="text-sm text-muted">{achievement.description}</div>
                   </Card>
                 </motion.div>
               ))}
@@ -572,9 +572,9 @@ export function LeadershipPage() {
       </section>
 
       {/* CTA #2 - Schedule Executive Briefing */}
-      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-[#0A0D12]/5 dark:from-white/[0.02] to-transparent">
+      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-alt to-transparent">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#00D3A9]/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl" />
         </div>
         
         <div className="container-enterprise relative z-10">
@@ -585,15 +585,15 @@ export function LeadershipPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00D3A9]/20 border border-[#00D3A9]/40 rounded-full mb-8">
-              <MessageSquare className="w-4 h-4 text-[#00D3A9]" />
-              <span className="text-sm text-[#00D3A9] uppercase tracking-wider">Executive Briefing</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 border border-accent/40 rounded-full mb-8">
+              <MessageSquare className="w-4 h-4 text-accent" />
+              <span className="text-sm text-accent uppercase tracking-wider">Executive Briefing</span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-8">
-              Discuss Your Infrastructure <span className="text-[#00D3A9]">Directly with Usama</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-8">
+              Discuss Your Infrastructure <span className="text-accent">Directly with Usama</span>
             </h2>
-            <p className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted mb-12 max-w-3xl mx-auto leading-relaxed">
               Every conversation is with the principal architect—no sales teams, no account managers. Get immediate technical insights and a clear transformation path forward.
             </p>
             
@@ -603,10 +603,10 @@ export function LeadershipPage() {
                 { icon: Target, title: 'Zero Pressure', desc: 'No sales pitch ever' },
                 { icon: CheckCircle2, title: 'Actionable Plan', desc: 'Walk away with clarity' }
               ].map((item, idx) => (
-                <Card key={idx} className="p-6 bg-white/90 dark:bg-white/[0.05] border-2 border-[#0A0D12]/10 dark:border-white/10">
-                  <item.icon className="w-10 h-10 text-[#00D3A9] mx-auto mb-4" />
-                  <div className="text-lg text-[#0A0D12] dark:text-white mb-2">{item.title}</div>
-                  <div className="text-sm text-[#0A0D12]/60 dark:text-white/60">{item.desc}</div>
+                <Card key={idx} className="p-6 bg-card/90 border-2 border-subtle">
+                  <item.icon className="w-10 h-10 text-accent mx-auto mb-4" />
+                  <div className="text-lg text-heading mb-2">{item.title}</div>
+                  <div className="text-sm text-muted">{item.desc}</div>
                 </Card>
               ))}
             </div>
@@ -614,7 +614,7 @@ export function LeadershipPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleScheduleCall}
-                className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-12 py-8 text-xl group transition-all duration-300 hover:shadow-xl hover:shadow-[#00D3A9]/20"
+                className="bg-accent hover:bg-accent/90 text-white px-12 py-8 text-xl group transition-all duration-300 hover:shadow-xl hover:shadow-accent/20"
               >
                 <Calendar className="mr-2 w-6 h-6" />
                 Schedule Executive Briefing
@@ -623,7 +623,7 @@ export function LeadershipPage() {
               <Button
                 onClick={() => window.location.href = 'mailto:info@huksons.com'}
                 variant="outline"
-                className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-12 py-8 text-xl"
+                className="border-2 border-heading text-heading hover:bg-heading/5 px-12 py-8 text-xl"
               >
                 <Mail className="mr-2 w-6 h-6" />
                 Email Instead
@@ -634,7 +634,7 @@ export function LeadershipPage() {
       </section>
 
       {/* Technical Expertise */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-alt">
         <div className="container-enterprise relative z-10">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -644,10 +644,10 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-4">
-                Technical <span className="text-[#00D3A9]">Expertise</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-4">
+                Technical <span className="text-accent">Expertise</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70">Deep expertise across the modern enterprise stack</p>
+              <p className="text-xl text-muted">Deep expertise across the modern enterprise stack</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -659,18 +659,18 @@ export function LeadershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-8 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-2xl hover:border-[#00D3A9]/40 hover:shadow-xl hover:shadow-[#00D3A9]/10 transition-all duration-300 h-full group">
+                  <Card className="p-8 bg-card border-2 border-subtle rounded-2xl hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 h-full group">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 bg-[#00D3A9]/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <area.icon className="w-6 h-6 text-[#00D3A9]" />
+                      <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <area.icon className="w-6 h-6 text-accent" />
                       </div>
-                      <h3 className="text-xl text-[#0A0D12] dark:text-white">{area.category}</h3>
+                      <h3 className="text-xl text-heading">{area.category}</h3>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {area.skills.map((skill, sIdx) => (
                         <span
                           key={sIdx}
-                          className="px-3 py-1.5 bg-[#0A0D12]/5 dark:bg-white/5 border border-[#0A0D12]/10 dark:border-white/10 rounded-lg text-sm text-[#0A0D12]/70 dark:text-white/70 hover:border-[#00D3A9]/30 hover:bg-[#00D3A9]/5 hover:text-[#00D3A9] transition-all duration-200"
+                          className="px-3 py-1.5 bg-alt border border-subtle rounded-lg text-sm text-muted hover:border-accent/30 hover:bg-accent/5 hover:text-accent transition-all duration-200"
                         >
                           {skill}
                         </span>
@@ -695,10 +695,10 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-4">
-                Industry <span className="text-[#00D3A9]">Certifications</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-4">
+                Industry <span className="text-accent">Certifications</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70">Current professional credentials and expertise validation</p>
+              <p className="text-xl text-muted">Current professional credentials and expertise validation</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -710,13 +710,13 @@ export function LeadershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-xl hover:border-[#00D3A9]/40 hover:shadow-xl hover:shadow-[#00D3A9]/10 transition-all duration-300 min-h-[120px] flex items-center gap-6 group">
-                    <div className="w-16 h-16 bg-[#00D3A9]/10 border-2 border-[#00D3A9]/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <Award className="w-8 h-8 text-[#00D3A9]" />
+                  <Card className="p-6 bg-card border-2 border-subtle rounded-xl hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 min-h-[120px] flex items-center gap-6 group">
+                    <div className="w-16 h-16 bg-accent/10 border-2 border-accent/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <Award className="w-8 h-8 text-accent" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-lg text-[#0A0D12] dark:text-white mb-1">{cert.name}</h4>
-                      <p className="text-sm text-[#0A0D12]/60 dark:text-white/60">{cert.issuer} • {cert.year}</p>
+                      <h4 className="text-lg text-heading mb-1">{cert.name}</h4>
+                      <p className="text-sm text-muted">{cert.issuer} • {cert.year}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -727,7 +727,7 @@ export function LeadershipPage() {
       </section>
 
       {/* Leadership Philosophy */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-alt">
         <div className="container-enterprise relative z-10">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -737,10 +737,10 @@ export function LeadershipPage() {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-4">
-                Leadership <span className="text-[#00D3A9]">Philosophy</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-4">
+                Leadership <span className="text-accent">Philosophy</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-2xl mx-auto">
+              <p className="text-xl text-muted max-w-2xl mx-auto">
                 The principles that guide every engagement and technical decision
               </p>
             </motion.div>
@@ -754,14 +754,14 @@ export function LeadershipPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-8 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-2xl hover:border-[#00D3A9]/40 hover:shadow-2xl hover:shadow-[#00D3A9]/10 transition-all duration-300 text-center h-full group min-h-[320px] md:min-h-[360px] flex flex-col">
-                    <div className="w-16 h-16 bg-gradient-to-br from-[#00D3A9]/20 to-[#00D3A9]/5 border-2 border-[#00D3A9]/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                      <principle.icon className="w-8 h-8 text-[#00D3A9]" />
+                  <Card className="p-8 bg-card border-2 border-subtle rounded-2xl hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 text-center h-full group min-h-[320px] md:min-h-[360px] flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/5 border-2 border-accent/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                      <principle.icon className="w-8 h-8 text-accent" />
                     </div>
-                    <h3 className="text-2xl text-[#0A0D12] dark:text-white mb-4">{principle.title}</h3>
-                    <p className="text-[#0A0D12]/70 dark:text-white/70 leading-relaxed mb-4 flex-1">{principle.description}</p>
-                    <div className="pt-4 border-t border-[#0A0D12]/10 dark:border-white/10">
-                      <p className="text-sm text-[#00D3A9] italic">{principle.principle}</p>
+                    <h3 className="text-2xl text-heading mb-4">{principle.title}</h3>
+                    <p className="text-muted leading-relaxed mb-4 flex-1">{principle.description}</p>
+                    <div className="pt-4 border-t border-subtle">
+                      <p className="text-sm text-accent italic">{principle.principle}</p>
                     </div>
                   </Card>
                 </motion.div>
@@ -781,19 +781,19 @@ export function LeadershipPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="relative p-12 md:p-20 bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent border-2 border-[#00D3A9]/20 rounded-3xl overflow-hidden text-center hover:shadow-2xl hover:shadow-[#00D3A9]/20 transition-all duration-500">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D3A9]/10 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#00D3A9]/10 rounded-full blur-3xl" />
+              <Card className="relative p-12 md:p-20 bg-gradient-to-br from-accent/10 via-accent/5 to-transparent border-2 border-accent/20 rounded-3xl overflow-hidden text-center hover:shadow-2xl hover:shadow-accent/20 transition-all duration-500">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
                 <div className="relative">
-                  <div className="text-6xl text-[#00D3A9]/20 mb-4">"</div>
-                  <blockquote className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12]/90 dark:text-white/90 italic leading-relaxed mb-8">
+                  <div className="text-6xl text-accent/20 mb-4">"</div>
+                  <blockquote className="text-3xl md:text-4xl lg:text-5xl text-heading/90 italic leading-relaxed mb-8">
                     We succeed when your systems make growth inevitable.
                   </blockquote>
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-1 h-12 bg-[#00D3A9]" />
+                    <div className="w-1 h-12 bg-accent" />
                     <div className="text-left">
-                      <p className="text-xl text-[#00D3A9]">Usama Idrees</p>
-                      <p className="text-[#0A0D12]/60 dark:text-white/60">Founder & Principal Architect</p>
+                      <p className="text-xl text-accent">Usama Idrees</p>
+                      <p className="text-muted">Founder & Principal Architect</p>
                     </div>
                   </div>
                 </div>
@@ -804,10 +804,10 @@ export function LeadershipPage() {
       </section>
 
       {/* Final CTA - Multiple Options */}
-      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent">
+      <section className="relative py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center bg-gradient-to-br from-accent/10 via-accent/5 to-transparent">
         <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#00D3A9]/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#00D3A9]/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s' }} />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '12s' }} />
         </div>
         
         <div className="container-enterprise relative z-10">
@@ -818,51 +818,51 @@ export function LeadershipPage() {
             transition={{ duration: 0.6 }}
             className="max-w-5xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-8">
-              Ready to Work with <span className="text-[#00D3A9]">Senior-Level Expertise?</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-8">
+              Ready to Work with <span className="text-accent">Senior-Level Expertise?</span>
             </h2>
-            <p className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 mb-16 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted mb-16 max-w-3xl mx-auto leading-relaxed">
               Every engagement is personally led by Usama. No junior teams, no delegation—just 17+ years of proven enterprise experience focused on your success.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <Card className="p-8 bg-white/90 dark:bg-white/[0.05] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 group">
-                <Calendar className="w-12 h-12 text-[#00D3A9] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl text-[#0A0D12] dark:text-white mb-3">Strategy Call</h3>
-                <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6">
+              <Card className="p-8 bg-card/90 border-2 border-subtle hover:border-accent transition-all duration-300 group">
+                <Calendar className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl text-heading mb-3">Strategy Call</h3>
+                <p className="text-muted mb-6">
                   30-minute technical discussion to understand your infrastructure challenges
                 </p>
                 <Button
                   onClick={handleScheduleCall}
-                  className="w-full bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12]"
+                  className="w-full bg-accent hover:bg-accent/90 text-white"
                 >
                   Schedule Now
                 </Button>
               </Card>
 
-              <Card className="p-8 bg-white/90 dark:bg-white/[0.05] border-2 border-[#00D3A9] hover:shadow-xl hover:shadow-[#00D3A9]/20 transition-all duration-300 group">
-                <FileText className="w-12 h-12 text-[#00D3A9] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl text-[#0A0D12] dark:text-white mb-3">Free Assessment</h3>
-                <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6">
+              <Card className="p-8 bg-card/90 border-2 border-accent hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 group">
+                <FileText className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl text-heading mb-3">Free Assessment</h3>
+                <p className="text-muted mb-6">
                   Comprehensive technical audit with actionable transformation roadmap
                 </p>
                 <Button
                   onClick={() => window.location.href = 'mailto:info@huksons.com?subject=Request Technical Assessment'}
-                  className="w-full bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12]"
+                  className="w-full bg-accent hover:bg-accent/90 text-white"
                 >
                   Request Assessment
                 </Button>
               </Card>
 
-              <Card className="p-8 bg-white/90 dark:bg-white/[0.05] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 group">
-                <Mail className="w-12 h-12 text-[#00D3A9] mx-auto mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl text-[#0A0D12] dark:text-white mb-3">Email Directly</h3>
-                <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6">
+              <Card className="p-8 bg-card/90 border-2 border-subtle hover:border-accent transition-all duration-300 group">
+                <Mail className="w-12 h-12 text-accent mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="text-xl text-heading mb-3">Email Directly</h3>
+                <p className="text-muted mb-6">
                   Reach out directly to discuss your specific technical requirements
                 </p>
                 <Button
                   onClick={() => window.location.href = 'mailto:info@huksons.com'}
-                  className="w-full bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12]"
+                  className="w-full bg-accent hover:bg-accent/90 text-white"
                 >
                   Send Email
                 </Button>
@@ -873,7 +873,7 @@ export function LeadershipPage() {
               <Button
                 onClick={() => navigate('/get-started')}
                 variant="outline"
-                className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-10 py-6 text-lg"
+                className="border-2 border-heading text-heading hover:bg-heading/5 px-10 py-6 text-lg"
               >
                 View All Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -881,7 +881,7 @@ export function LeadershipPage() {
               <Button
                 onClick={() => navigate('/why-us')}
                 variant="outline"
-                className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-10 py-6 text-lg"
+                className="border-2 border-heading text-heading hover:bg-heading/5 px-10 py-6 text-lg"
               >
                 Why Choose Us
                 <ArrowRight className="ml-2 w-5 h-5" />

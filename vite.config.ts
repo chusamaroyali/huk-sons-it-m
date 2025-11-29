@@ -52,6 +52,10 @@
     build: {
       target: 'esnext',
       outDir: 'dist',
+      cssCodeSplit: true,
+      sourcemap: false,
+      minify: 'esbuild',
+      cssMinify: true,
       rollupOptions: {
         output: {
           manualChunks: {

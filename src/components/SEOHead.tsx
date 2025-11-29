@@ -243,30 +243,105 @@ export function SEOHead({
       '@id': 'https://huksonsit.com/#service',
       name: 'HUK SONS IT - Enterprise Technical Transformation Services',
       description: 'Comprehensive cloud infrastructure, DevOps, AI automation, and data engineering services for enterprises',
-      provider: {
-        '@id': 'https://huksonsit.com/#organization'
-      },
-      areaServed: 'Worldwide',
-      serviceType: [
-        'Cloud Infrastructure Management',
-        'DevOps Engineering',
-        'AI & Automation',
-        'Data Engineering',
-        'Emergency Intervention',
-        'Digital Marketing',
-        'Business Process Optimization',
-        'Growth Solutions'
-      ],
-      priceRange: '$$$$',
       url: 'https://huksonsit.com',
       telephone: '+1-555-EXPAND',
-      email: 'info@huksons.com'
+      email: 'info@huksons.com',
+      priceRange: '$$$$',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'US',
+        addressLocality: 'Global',
+        streetAddress: 'Global Operations'
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Enterprise Technical Services',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Cloud Infrastructure Management'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'DevOps Engineering'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'AI & Automation'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Data Engineering'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Emergency Intervention'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Digital Marketing'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Business Process Optimization'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Growth Solutions'
+            }
+          }
+        ]
+      }
+    };
+
+    // Breadcrumb Schema
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const breadcrumbList = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://huksonsit.com'
+        },
+        ...pathSegments.map((segment, index) => ({
+          '@type': 'ListItem',
+          position: index + 2,
+          name: segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+          item: `https://huksonsit.com/${pathSegments.slice(0, index + 1).join('/')}`
+        }))
+      ]
     };
 
     // Combine all schemas
     const structuredData = {
       '@context': 'https://schema.org',
-      '@graph': [organizationSchema, websiteSchema, serviceSchema]
+      '@graph': [organizationSchema, websiteSchema, serviceSchema, breadcrumbList]
     };
 
     let scriptElement = document.querySelector('script[type="application/ld+json"]');
@@ -278,9 +353,9 @@ export function SEOHead({
     scriptElement.textContent = JSON.stringify(structuredData);
 
     // Add additional SEO-friendly meta tags
-    updateMetaTag('theme-color', '#00D3A9');
-    updateMetaTag('msapplication-TileColor', '#0A0D12');
-    updateMetaTag('msapplication-navbutton-color', '#00D3A9');
+    updateMetaTag('theme-color', '#2C3745');
+    updateMetaTag('msapplication-TileColor', '#10141A');
+    updateMetaTag('msapplication-navbutton-color', '#2C3745');
     updateMetaTag('application-name', 'HUK SONS IT');
 
     // Performance and Core Web Vitals hints

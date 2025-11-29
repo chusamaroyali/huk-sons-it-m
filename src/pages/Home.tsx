@@ -7,7 +7,7 @@ import { SEOHead } from '../components/SEOHead';
 
 export function Home() {
   return (
-    <div className="bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="transition-colors duration-300">
       <SEOHead
         title="Home"
         description="HUK SONS IT - Global technical transformation and engineering firm. Enterprise-grade cloud modernization, AI automation, data infrastructure, and growth solutions for sustainable business expansion."

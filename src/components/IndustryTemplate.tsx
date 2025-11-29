@@ -27,7 +27,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
   const Icon = industry.icon;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-main transition-colors duration-300">
       <SEOHead
         title={`${industry.name} Solutions | HUK SONS IT`}
         description={`${industry.description} Trusted enterprise technology partner for ${industry.name} companies. ${industry.averageEngagement || ''}`}
@@ -39,8 +39,8 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
+            linear-gradient(to right, var(--primary) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--primary) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }} />
@@ -48,7 +48,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '8s' }} />
         
         <div className="container-enterprise relative z-10">
           <div className="max-w-5xl mx-auto">
@@ -56,9 +56,9 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center justify-center w-24 h-24 bg-[#00D3A9]/10 rounded-3xl mb-8"
+              className="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-3xl mb-8"
             >
-              <Icon className="w-12 h-12 text-[#00D3A9]" />
+              <Icon className="w-12 h-12 text-primary" />
             </motion.div>
 
             <motion.h1
@@ -67,7 +67,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6"
             >
-              <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-heading to-body/60 bg-clip-text text-transparent">
                 {industry.name}
               </span>
             </motion.h1>
@@ -76,7 +76,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-body/70 mb-8 leading-relaxed"
             >
               {industry.description}
             </motion.p>
@@ -86,11 +86,11 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full mb-8"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full mb-8"
               >
-                <Award className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-[#0A0D12] dark:text-white">
-                  Average Engagement: <span className="text-[#00D3A9]">{industry.averageEngagement}</span>
+                <Award className="w-5 h-5 text-primary" />
+                <span className="text-heading">
+                  Average Engagement: <span className="text-primary">{industry.averageEngagement}</span>
                 </span>
               </motion.div>
             )}
@@ -103,7 +103,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
             >
               <Button
                 onClick={handleGetStarted}
-                className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-8 py-6 text-lg group"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg group"
               >
                 Start Your Transformation
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -111,7 +111,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               <Button
                 onClick={() => navigate('/industries')}
                 variant="outline"
-                className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-8 py-6 text-lg"
+                className="border-2 border-heading text-heading hover:bg-body/5 px-8 py-6 text-lg"
               >
                 View All Industries
               </Button>
@@ -122,7 +122,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
 
       {/* Challenges Section */}
       {industry.challenges && industry.challenges.length > 0 && (
-        <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+        <section className="relative py-16 md:py-24 bg-body/5">
           <div className="container-enterprise relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -131,10 +131,10 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               transition={{ duration: 0.5 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-4">
-                Industry <span className="text-[#00D3A9]">Challenges</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading mb-4">
+                Industry <span className="text-primary">Challenges</span>
               </h2>
-              <p className="text-lg text-[#0A0D12]/70 dark:text-white/70 mb-12">
+              <p className="text-lg text-body/70 mb-12">
                 Common technical challenges we solve for {industry.name} organizations
               </p>
 
@@ -147,10 +147,10 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 h-full min-h-[100px] flex flex-col justify-center">
+                    <Card className="p-6 bg-card border-2 border-subtle hover:border-primary transition-all duration-300 h-full min-h-[100px] flex flex-col justify-center">
                       <div className="flex items-start gap-4">
-                        <div className="w-2 h-2 bg-[#00D3A9] rounded-full mt-2 flex-shrink-0" />
-                        <p className="text-[#0A0D12] dark:text-white">{challenge}</p>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <p className="text-heading">{challenge}</p>
                       </div>
                     </Card>
                   </motion.div>
@@ -163,17 +163,17 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-12 text-center p-8 bg-white dark:bg-white/[0.03] border-2 border-[#00D3A9]/20 rounded-2xl"
+                className="mt-12 text-center p-8 bg-card border-2 border-primary/20 rounded-2xl"
               >
-                <h3 className="text-xl md:text-2xl text-[#0A0D12] dark:text-white mb-3">
+                <h3 className="text-xl md:text-2xl text-heading mb-3">
                   Facing These Challenges?
                 </h3>
-                <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6 max-w-2xl mx-auto">
+                <p className="text-body/70 mb-6 max-w-2xl mx-auto">
                   Our team of enterprise architects specializes in solving complex technical challenges for {industry.name} organizations.
                 </p>
                 <Button
                   onClick={handleGetStarted}
-                  className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-8 py-4 text-base group"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-base group"
                 >
                   Get Expert Help
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -195,10 +195,10 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
               transition={{ duration: 0.5 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-4">
-                Our <span className="text-[#00D3A9]">Solutions</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading mb-4">
+                Our <span className="text-primary">Solutions</span>
               </h2>
-              <p className="text-lg text-[#0A0D12]/70 dark:text-white/70 mb-12">
+              <p className="text-lg text-body/70 mb-12">
                 Enterprise-grade technical solutions tailored for {industry.name}
               </p>
 
@@ -211,10 +211,10 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] hover:shadow-xl hover:shadow-[#00D3A9]/10 transition-all duration-300 h-full group min-h-[100px] flex flex-col justify-center">
+                    <Card className="p-6 bg-card border-2 border-subtle hover:border-primary hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 h-full group min-h-[100px] flex flex-col justify-center">
                       <div className="flex items-start gap-4">
-                        <CheckCircle className="w-6 h-6 text-[#00D3A9] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
-                        <p className="text-[#0A0D12] dark:text-white">{solution}</p>
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" />
+                        <p className="text-heading">{solution}</p>
                       </div>
                     </Card>
                   </motion.div>
@@ -227,19 +227,19 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="mt-12 p-8 md:p-10 bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent border-2 border-[#00D3A9]/30 rounded-2xl"
+                className="mt-12 p-8 md:p-10 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-2 border-primary/30 rounded-2xl"
               >
                 <div className="max-w-3xl mx-auto text-center">
-                  <h3 className="text-2xl md:text-3xl text-[#0A0D12] dark:text-white mb-4">
+                  <h3 className="text-2xl md:text-3xl text-heading mb-4">
                     Ready to Transform Your {industry.name} Infrastructure?
                   </h3>
-                  <p className="text-[#0A0D12]/70 dark:text-white/70 mb-6">
+                  <p className="text-body/70 mb-6">
                     Get a custom-tailored solution built specifically for your enterprise needs.
                   </p>
                   <div className="flex flex-wrap gap-4 justify-center">
                     <Button
                       onClick={handleGetStarted}
-                      className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-8 py-6 text-lg group"
+                      className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg group"
                     >
                       Schedule Consultation
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -247,7 +247,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                     <Button
                       onClick={() => navigate('/services')}
                       variant="outline"
-                      className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-8 py-6 text-lg"
+                      className="border-2 border-heading text-heading hover:bg-body/5 px-8 py-6 text-lg"
                     >
                       Explore Services
                     </Button>
@@ -260,7 +260,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
       )}
 
       {/* Related Services Section */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-body/5">
         <div className="container-enterprise relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -269,10 +269,10 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-4">
-              Relevant <span className="text-[#00D3A9]">Services</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading mb-4">
+              Relevant <span className="text-primary">Services</span>
             </h2>
-            <p className="text-lg text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg text-body/70 max-w-3xl mx-auto">
               Explore our specialized services designed for {industry.name} organizations
             </p>
           </motion.div>
@@ -290,18 +290,18 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 >
                   <Card
                     onClick={() => handleServiceClick(service.page)}
-                    className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] hover:shadow-xl hover:shadow-[#00D3A9]/10 transition-all duration-300 cursor-pointer group h-full"
+                    className="p-6 bg-card border-2 border-subtle hover:border-primary hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 cursor-pointer group h-full"
                   >
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 ${service.iconBg} group-hover:scale-110 transition-transform`}>
-                      <ServiceIcon className="w-7 h-7 text-[#00D3A9]" />
+                      <ServiceIcon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-lg text-[#0A0D12] dark:text-white mb-2 group-hover:text-[#00D3A9] transition-colors">
+                    <h3 className="text-lg text-heading mb-2 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-4 line-clamp-2">
+                    <p className="text-sm text-body/60 mb-4 line-clamp-2">
                       {service.description}
                     </p>
-                    <div className="flex items-center gap-2 text-[#00D3A9] group-hover:gap-3 transition-all">
+                    <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all">
                       <span className="text-sm">Learn More</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>
@@ -321,7 +321,7 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
             <Button
               onClick={() => navigate('/services')}
               variant="outline"
-              className="border-2 border-[#0A0D12] dark:border-white text-[#0A0D12] dark:text-white hover:bg-[#0A0D12]/5 dark:hover:bg-white/5 px-8 py-4"
+              className="border-2 border-heading text-heading hover:bg-body/5 px-8 py-4"
             >
               View All Services
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -347,12 +347,12 @@ export function IndustryTemplate({ industry }: IndustryTemplateProps) {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300 text-center group">
-                  <div className="w-12 h-12 bg-[#00D3A9]/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <stat.icon className="w-6 h-6 text-[#00D3A9]" />
+                <Card className="p-6 bg-card border-2 border-subtle hover:border-primary transition-all duration-300 text-center group">
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <stat.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-3xl md:text-4xl text-[#00D3A9] mb-2">{stat.value}</div>
-                  <div className="text-sm text-[#0A0D12]/70 dark:text-white/70">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl text-primary mb-2">{stat.value}</div>
+                  <div className="text-sm text-body/70">{stat.label}</div>
                 </Card>
               </motion.div>
             ))}

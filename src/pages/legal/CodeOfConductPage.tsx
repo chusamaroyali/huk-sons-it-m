@@ -136,7 +136,7 @@ export function CodeOfConductPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-main transition-colors duration-300">
       <SEOHead
         title="Code of Conduct | Ethics & Professional Standards | HUK SONS IT"
         description="HUK SONS IT's Code of Conduct outlines our commitment to integrity, respect, excellence, and accountability. Professional standards, ethical guidelines, and reporting procedures."
@@ -148,14 +148,14 @@ export function CodeOfConductPage() {
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
+            linear-gradient(to right, var(--primary) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--primary) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }} />
       </div>
 
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32">
@@ -167,22 +167,22 @@ export function CodeOfConductPage() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full mb-8">
-                <Shield className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-sm uppercase tracking-wider text-[#00D3A9]">Code of Conduct</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full mb-8">
+                <Shield className="w-5 h-5 text-primary" />
+                <span className="text-sm uppercase tracking-wider text-primary">Code of Conduct</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8">
-                <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-heading to-heading/60 bg-clip-text text-transparent">
                   Ethics &<br />Professional Standards
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-body dark:text-white/70 max-w-3xl mx-auto leading-relaxed">
                 Our commitment to integrity, respect, and excellence guides every interaction and decision we make.
               </p>
 
-              <div className="mt-8 text-sm text-[#0A0D12]/60 dark:text-white/60">
+              <div className="mt-8 text-sm text-muted-foreground dark:text-white/60">
                 Last Updated: November 26, 2025 | Version 2.0
               </div>
             </motion.div>
@@ -191,14 +191,14 @@ export function CodeOfConductPage() {
       </section>
 
       {/* Core Values */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent">
         <div className="container-enterprise relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl text-[#0A0D12] dark:text-white mb-6">
-                Our Core <span className="text-[#00D3A9]">Values</span>
+              <h2 className="text-4xl md:text-5xl text-heading dark:text-white mb-6">
+                Our Core <span className="text-primary">Values</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+              <p className="text-xl text-body dark:text-white/70 max-w-3xl mx-auto">
                 The foundation of our organizational culture and professional conduct.
               </p>
             </div>
@@ -212,12 +212,12 @@ export function CodeOfConductPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-6 text-center h-full bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9]/30 transition-all duration-300">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#00D3A9]/20 to-transparent border-2 border-[#00D3A9]/30 rounded-2xl flex items-center justify-center">
-                      <value.icon className="w-8 h-8 text-[#00D3A9]" />
+                  <Card className="p-6 text-center h-full bg-card border-2 border-subtle hover:border-primary/30 transition-all duration-300">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-transparent border-2 border-primary/30 rounded-2xl flex items-center justify-center">
+                      <value.icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-xl text-[#0A0D12] dark:text-white mb-3">{value.title}</h3>
-                    <p className="text-[#0A0D12]/70 dark:text-white/70 text-sm">{value.description}</p>
+                    <h3 className="text-xl text-heading dark:text-white mb-3">{value.title}</h3>
+                    <p className="text-body dark:text-white/70 text-sm">{value.description}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -231,10 +231,10 @@ export function CodeOfConductPage() {
         <div className="container-enterprise relative z-10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl text-[#0A0D12] dark:text-white mb-6">
-                Professional <span className="text-[#00D3A9]">Guidelines</span>
+              <h2 className="text-4xl md:text-5xl text-heading dark:text-white mb-6">
+                Professional <span className="text-primary">Guidelines</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+              <p className="text-xl text-body dark:text-white/70 max-w-3xl mx-auto">
                 Standards that define how we conduct business and interact with colleagues, clients, and partners.
               </p>
             </div>
@@ -248,17 +248,17 @@ export function CodeOfConductPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-8 h-full bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10">
+                  <Card className="p-8 h-full bg-card border-2 border-subtle">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 bg-[#00D3A9]/10 border border-[#00D3A9]/20 rounded-xl flex items-center justify-center">
-                        <principle.icon className="w-6 h-6 text-[#00D3A9]" />
+                      <div className="w-12 h-12 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center">
+                        <principle.icon className="w-6 h-6 text-primary" />
                       </div>
-                      <h3 className="text-2xl text-[#0A0D12] dark:text-white">{principle.title}</h3>
+                      <h3 className="text-2xl text-heading dark:text-white">{principle.title}</h3>
                     </div>
                     <ul className="space-y-3">
                       {principle.guidelines.map((guideline, gIdx) => (
-                        <li key={gIdx} className="flex items-start gap-3 text-[#0A0D12]/80 dark:text-white/80">
-                          <CheckCircle2 className="w-5 h-5 text-[#00D3A9] flex-shrink-0 mt-0.5" />
+                        <li key={gIdx} className="flex items-start gap-3 text-body dark:text-white/80">
+                          <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span>{guideline}</span>
                         </li>
                       ))}
@@ -272,7 +272,7 @@ export function CodeOfConductPage() {
       </section>
 
       {/* Prohibited Conduct */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-muted/50 dark:bg-white/[0.02]">
         <div className="container-enterprise relative z-10">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -281,17 +281,17 @@ export function CodeOfConductPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Card className="p-10 bg-white dark:bg-white/[0.03] border-2 border-red-500/20">
+              <Card className="p-10 bg-card border-2 border-red-500/20">
                 <div className="flex items-center gap-3 mb-6">
                   <AlertTriangle className="w-10 h-10 text-red-500" />
-                  <h2 className="text-3xl text-[#0A0D12] dark:text-white">Prohibited Conduct</h2>
+                  <h2 className="text-3xl text-heading dark:text-white">Prohibited Conduct</h2>
                 </div>
-                <p className="text-lg text-[#0A0D12]/80 dark:text-white/80 mb-6">
+                <p className="text-lg text-body dark:text-white/80 mb-6">
                   The following behaviors are strictly prohibited and may result in disciplinary action up to and including termination:
                 </p>
                 <ul className="space-y-3">
                   {prohibitedConduct.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[#0A0D12]/80 dark:text-white/80">
+                    <li key={idx} className="flex items-start gap-3 text-body dark:text-white/80">
                       <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2" />
                       <span>{item}</span>
                     </li>
@@ -308,10 +308,10 @@ export function CodeOfConductPage() {
         <div className="container-enterprise relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl text-[#0A0D12] dark:text-white mb-6">
-                Reporting <span className="text-[#00D3A9]">Violations</span>
+              <h2 className="text-4xl md:text-5xl text-heading dark:text-white mb-6">
+                Reporting <span className="text-primary">Violations</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+              <p className="text-xl text-body dark:text-white/70 max-w-3xl mx-auto">
                 We encourage reporting of any conduct violations. All reports are treated confidentially and without retaliation.
               </p>
             </div>
@@ -325,34 +325,34 @@ export function CodeOfConductPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-6 h-full bg-gradient-to-br from-[#00D3A9]/10 to-transparent border-2 border-[#00D3A9]/20">
-                    <div className="w-12 h-12 mb-4 bg-[#00D3A9] text-[#0A0D12] rounded-xl flex items-center justify-center text-2xl">
+                  <Card className="p-6 h-full bg-gradient-to-br from-primary/10 to-transparent border-2 border-primary/20">
+                    <div className="w-12 h-12 mb-4 bg-primary text-heading rounded-xl flex items-center justify-center text-2xl">
                       {step.step}
                     </div>
-                    <h3 className="text-lg text-[#0A0D12] dark:text-white mb-3">{step.title}</h3>
-                    <p className="text-sm text-[#0A0D12]/70 dark:text-white/70">{step.description}</p>
+                    <h3 className="text-lg text-heading dark:text-white mb-3">{step.title}</h3>
+                    <p className="text-sm text-body dark:text-white/70">{step.description}</p>
                   </Card>
                 </motion.div>
               ))}
             </div>
 
-            <Card className="p-8 bg-white dark:bg-white/[0.03] border-2 border-[#00D3A9]/20">
-              <h3 className="text-2xl text-[#0A0D12] dark:text-white mb-4">Reporting Channels</h3>
+            <Card className="p-8 bg-card border-2 border-primary/20">
+              <h3 className="text-2xl text-heading dark:text-white mb-4">Reporting Channels</h3>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-6 bg-[#0A0D12]/5 dark:bg-white/[0.02] rounded-xl">
-                  <MessageSquare className="w-8 h-8 text-[#00D3A9] mx-auto mb-3" />
-                  <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-2">Ethics Hotline</div>
-                  <div className="text-[#00D3A9]">ethics@huksons.com</div>
+                <div className="text-center p-6 bg-muted/50 dark:bg-white/[0.02] rounded-xl">
+                  <MessageSquare className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <div className="text-sm text-muted-foreground dark:text-white/60 mb-2">Ethics Hotline</div>
+                  <div className="text-primary">ethics@huksons.com</div>
                 </div>
-                <div className="text-center p-6 bg-[#0A0D12]/5 dark:bg-white/[0.02] rounded-xl">
-                  <Users className="w-8 h-8 text-[#00D3A9] mx-auto mb-3" />
-                  <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-2">Human Resources</div>
-                  <div className="text-[#00D3A9]">hr@huksons.com</div>
+                <div className="text-center p-6 bg-muted/50 dark:bg-white/[0.02] rounded-xl">
+                  <Users className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <div className="text-sm text-muted-foreground dark:text-white/60 mb-2">Human Resources</div>
+                  <div className="text-primary">hr@huksons.com</div>
                 </div>
-                <div className="text-center p-6 bg-[#0A0D12]/5 dark:bg-white/[0.02] rounded-xl">
-                  <Shield className="w-8 h-8 text-[#00D3A9] mx-auto mb-3" />
-                  <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-2">Compliance Officer</div>
-                  <div className="text-[#00D3A9]">compliance@huksons.com</div>
+                <div className="text-center p-6 bg-muted/50 dark:bg-white/[0.02] rounded-xl">
+                  <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
+                  <div className="text-sm text-muted-foreground dark:text-white/60 mb-2">Compliance Officer</div>
+                  <div className="text-primary">compliance@huksons.com</div>
                 </div>
               </div>
             </Card>
@@ -361,14 +361,14 @@ export function CodeOfConductPage() {
       </section>
 
       {/* Consequences */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-muted/50 dark:bg-white/[0.02]">
         <div className="container-enterprise relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl text-[#0A0D12] dark:text-white mb-6">
-                Enforcement & <span className="text-[#00D3A9]">Consequences</span>
+              <h2 className="text-4xl md:text-5xl text-heading dark:text-white mb-6">
+                Enforcement & <span className="text-primary">Consequences</span>
               </h2>
-              <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+              <p className="text-xl text-body dark:text-white/70 max-w-3xl mx-auto">
                 Violations are addressed based on severity, with consequences proportionate to the offense.
               </p>
             </div>
@@ -382,25 +382,25 @@ export function CodeOfConductPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                 >
-                  <Card className="p-6 h-full bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10">
-                    <h3 className="text-xl text-[#0A0D12] dark:text-white mb-4">{level.severity}</h3>
+                  <Card className="p-6 h-full bg-card border-2 border-subtle">
+                    <h3 className="text-xl text-heading dark:text-white mb-4">{level.severity}</h3>
                     <div className="mb-4">
-                      <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-2">Examples:</div>
-                      <ul className="space-y-1 text-sm text-[#0A0D12]/70 dark:text-white/70">
+                      <div className="text-sm text-muted-foreground dark:text-white/60 mb-2">Examples:</div>
+                      <ul className="space-y-1 text-sm text-body dark:text-white/70">
                         {level.examples.map((example, eIdx) => (
                           <li key={eIdx} className="flex items-start gap-2">
-                            <span className="w-1.5 h-1.5 bg-[#00D3A9] rounded-full flex-shrink-0 mt-1.5" />
+                            <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0 mt-1.5" />
                             {example}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 mb-2">Potential Actions:</div>
-                      <ul className="space-y-1 text-sm text-[#0A0D12]/70 dark:text-white/70">
+                      <div className="text-sm text-muted-foreground dark:text-white/60 mb-2">Potential Actions:</div>
+                      <ul className="space-y-1 text-sm text-body dark:text-white/70">
                         {level.actions.map((action, aIdx) => (
                           <li key={aIdx} className="flex items-start gap-2">
-                            <CheckCircle2 className="w-4 h-4 text-[#00D3A9] flex-shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                             {action}
                           </li>
                         ))}
@@ -424,15 +424,15 @@ export function CodeOfConductPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <Card className="p-10 bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent border-2 border-[#00D3A9]/20">
-              <Shield className="w-16 h-16 text-[#00D3A9] mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl text-[#0A0D12] dark:text-white mb-6">
+            <Card className="p-10 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border-2 border-primary/20">
+              <Shield className="w-16 h-16 text-primary mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl text-heading dark:text-white mb-6">
                 Our Commitment
               </h2>
-              <p className="text-lg text-[#0A0D12]/80 dark:text-white/80 mb-6">
+              <p className="text-lg text-body dark:text-white/80 mb-6">
                 HUK SONS IT is committed to maintaining the highest ethical standards and creating a workplace where integrity, respect, and excellence thrive. Every team member, contractor, and partner is expected to uphold these principles and contribute to our culture of professionalism and accountability.
               </p>
-              <p className="text-[#0A0D12]/70 dark:text-white/70">
+              <p className="text-body dark:text-white/70">
                 This Code of Conduct is a living document, reviewed annually and updated to reflect evolving best practices and organizational values.
               </p>
             </Card>

@@ -31,12 +31,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Save theme preference
     localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
     
-    // Apply theme class
+    // Apply theme class and attribute
     if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
       document.documentElement.classList.add('dark');
     } else {
+      document.documentElement.removeAttribute('data-theme');
       document.documentElement.classList.remove('dark');
     }
   }, [theme]);

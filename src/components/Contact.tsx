@@ -58,19 +58,19 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#F8FAFC] dark:bg-[#0E1116] transition-colors duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-main transition-colors duration-300">
+      <div className="container-enterprise">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-[#19B394]/10 border border-[#19B394]/30 rounded-full text-[#19B394] uppercase tracking-wider">
+            <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary uppercase tracking-wider">
               Get Started
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-6">
-            Ready to <span className="text-[#19B394]">Transform?</span>
+          <h2 className="text-4xl sm:text-5xl text-heading mb-6">
+            Ready to <span className="text-primary">Transform?</span>
           </h2>
-          <p className="text-xl text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70">
+          <p className="text-xl text-body/70">
             Start your technical transformation with a strategic audit and architecture review.
           </p>
         </div>
@@ -78,11 +78,11 @@ export function Contact() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <Card className="border-2 border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10 p-8 bg-white dark:bg-white/[0.03]">
-              <h3 className="text-2xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-6">Send us a message</h3>
+            <Card className="border-2 border-subtle p-8 bg-card">
+              <h3 className="text-2xl text-heading mb-6">Send us a message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">
+                  <label htmlFor="name" className="block text-heading mb-2">
                     Full Name *
                   </label>
                   <Input
@@ -98,7 +98,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">
+                  <label htmlFor="email" className="block text-heading mb-2">
                     Email Address *
                   </label>
                   <Input
@@ -114,7 +114,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">
+                  <label htmlFor="company" className="block text-heading mb-2">
                     Company Name *
                   </label>
                   <Input
@@ -130,7 +130,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">
+                  <label htmlFor="message" className="block text-heading mb-2">
                     Project Details *
                   </label>
                   <Textarea
@@ -147,12 +147,13 @@ export function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#19B394] hover:bg-[#19B394]/90 text-white py-6"
+                  variant="premium"
+                  className="w-full py-6"
                 >
                   {isSubmitting ? 'Sending...' : 'Start Your Transformation'}
                 </Button>
 
-                <p className="text-sm text-[#0F6B4D]/50 dark:text-[#F8FAFC]/50 text-center">
+                <p className="text-sm text-body/50 text-center">
                   Minimum engagement: {COMPANY_INFO.minimumEngagement} | Response time: 24-48 hours
                 </p>
               </form>
@@ -162,18 +163,18 @@ export function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Cards */}
-            <Card className="bg-[#0F6B4D]/5 dark:bg-[#0E1116] border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10 p-8">
+            <Card className="bg-body/5 border-subtle p-8">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#19B394]/10 rounded-lg flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-[#19B394]" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">Email</h4>
+                  <h4 className="text-heading mb-2">Email</h4>
                   <a
                     href={`mailto:${COMPANY_INFO.email}`}
-                    className="text-[#19B394] hover:underline"
+                    className="text-primary hover:underline"
                   >
                     {COMPANY_INFO.email}
                   </a>
@@ -182,15 +183,15 @@ export function Contact() {
 
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#19B394]/10 rounded-lg flex items-center justify-center">
-                    <Globe className="w-6 h-6 text-[#19B394]" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Globe className="w-6 h-6 text-primary" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">Website</h4>
+                  <h4 className="text-heading mb-2">Website</h4>
                   <a
                     href={COMPANY_INFO.website}
-                    className="text-[#19B394] hover:underline"
+                    className="text-primary hover:underline"
                   >
                     {COMPANY_INFO.website}
                   </a>
@@ -199,13 +200,13 @@ export function Contact() {
 
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-[#19B394]/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-[#19B394]" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-primary" />
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-[#0F6B4D] dark:text-[#F8FAFC] mb-2">Global Presence</h4>
-                  <div className="text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70 space-y-1">
+                  <h4 className="text-heading mb-2">Global Presence</h4>
+                  <div className="text-body/70 space-y-1">
                     <p>HQ: {COMPANY_INFO.locations.hq}</p>
                     <p>Operations: {COMPANY_INFO.locations.operations.join(' & ')}</p>
                     <p>{COMPANY_INFO.locations.model}</p>
@@ -215,12 +216,12 @@ export function Contact() {
             </Card>
 
             {/* Engagement Terms */}
-            <Card className="border-2 border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10 p-8 bg-white dark:bg-white/[0.03]">
-              <h4 className="text-xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-4">Engagement Terms</h4>
-              <div className="space-y-3 text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70">
+            <Card className="border-2 border-subtle p-8 bg-card">
+              <h4 className="text-xl text-heading mb-4">Engagement Terms</h4>
+              <div className="space-y-3 text-body/70">
                 {ENGAGEMENT_TERMS.map((term, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <span className="text-[#19B394] mt-1">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>{term}</span>
                   </div>
                 ))}
@@ -228,11 +229,11 @@ export function Contact() {
             </Card>
 
             {/* Languages */}
-            <Card className="bg-[#19B394]/10 border-[#19B394]/30 p-8">
-              <h4 className="text-[#0F6B4D] mb-4">Languages Supported</h4>
-              <div className="flex items-center gap-4 text-[#0F6B4D]/70 flex-wrap">
+            <Card className="bg-primary/10 border-primary/30 p-8">
+              <h4 className="text-heading mb-4">Languages Supported</h4>
+              <div className="flex items-center gap-4 text-body/70 flex-wrap">
                 {COMPANY_INFO.languages.map((lang, index) => (
-                  <span key={index} className="px-3 py-1 bg-white rounded-full">{lang}</span>
+                  <span key={index} className="px-3 py-1 bg-card rounded-full">{lang}</span>
                 ))}
               </div>
             </Card>

@@ -3,53 +3,36 @@
  * 
  * This file contains all color constants used across the application.
  * It ensures consistency and makes it easy to update colors site-wide.
+ * 
+ * UPDATED: Now maps exclusively to CSS variables for the new design system.
  */
 
 export const COLORS = {
-  // Primary Brand - Deep Green
+  // Brand Colors
   brand: {
-    primary: {
-      light: '#0F6B4D',
-      dark: '#0B4D36',
-    },
+    primary: 'var(--brand-primary)',   // Graphite
+    accent: 'var(--brand-accent)',     // Eucalyptus
+    signature: 'var(--brand-signature)', // Bordeaux
   },
 
-  // Neutral Base - Clean Surfaces
+  // Neutral Colors
   neutral: {
-    base: {
-      light: '#F8FAFC',
-      dark: '#0E1116',
-    },
-    premium: {
-      light: '#DDE1E6',
-      dark: '#9BA1A7',
-    },
-    card: {
-      light: '#FFFFFF',
-      dark: '#1A1E24',
-    },
-    muted: {
-      light: '#DDE1E6',
-      dark: '#2A2F36',
-    },
+    bg: 'var(--bg)',
+    bgAlt: 'var(--bg-alt)',
+    card: 'var(--card-bg)',
+    borderSubtle: 'var(--border-subtle)',
+    borderStrong: 'var(--border-strong)',
+    textHeading: 'var(--text-heading)',
+    textBody: 'var(--text-body)',
+    textMuted: 'var(--text-muted)',
   },
 
-  // Accent Colors
-  accent: {
-    teal: '#19B394', // AI-Centric Teal (consistent in both modes)
-    blue: {
-      light: '#1A73E8',
-      dark: '#3C8DFF',
-    },
-    gold: {
-      light: '#D4A936',
-      dark: '#B8922E',
-    },
-  },
-
-  // Alert/Error
-  alert: {
-    red: '#E25555', // Consistent in both modes
+  // Semantic Colors
+  semantic: {
+    success: 'var(--success)',
+    info: 'var(--info)',
+    warning: 'var(--warning)',
+    error: 'var(--error)',
   },
 } as const;
 
@@ -59,59 +42,52 @@ export const COLORS = {
 export const tw = {
   // Background colors
   bg: {
-    base: 'bg-[#F8FAFC] dark:bg-[#0E1116]',
-    card: 'bg-white dark:bg-[#1A1E24]',
-    muted: 'bg-[#DDE1E6] dark:bg-[#2A2F36]',
-    premium: 'bg-[#DDE1E6] dark:bg-[#9BA1A7]',
-    primary: 'bg-[#0F6B4D] dark:bg-[#0B4D36]',
-    accent: 'bg-[#19B394]',
-    accentBlue: 'bg-[#1A73E8] dark:bg-[#3C8DFF]',
-    accentGold: 'bg-[#D4A936] dark:bg-[#B8922E]',
-    alert: 'bg-[#E25555]',
+    base: 'bg-[var(--bg)]',
+    alt: 'bg-[var(--bg-alt)]',
+    card: 'bg-[var(--card-bg)]',
+    primary: 'bg-[var(--brand-primary)]',
+    accent: 'bg-[var(--brand-accent)]',
+    signature: 'bg-[var(--brand-signature)]',
   },
 
   // Text colors
   text: {
-    primary: 'text-[#0F6B4D] dark:text-[#F8FAFC]',
-    secondary: 'text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70',
-    muted: 'text-[#0F6B4D]/60 dark:text-[#F8FAFC]/60',
-    accent: 'text-[#19B394]',
-    accentBlue: 'text-[#1A73E8] dark:text-[#3C8DFF]',
-    accentGold: 'text-[#D4A936] dark:text-[#B8922E]',
-    alert: 'text-[#E25555]',
+    heading: 'text-[var(--text-heading)]',
+    body: 'text-[var(--text-body)]',
+    muted: 'text-[var(--text-muted)]',
+    primary: 'text-[var(--brand-primary)]',
+    accent: 'text-[var(--brand-accent)]',
   },
 
   // Border colors
   border: {
-    default: 'border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15',
-    muted: 'border-[#0F6B4D]/8 dark:border-[#9BA1A7]/10',
-    accent: 'border-[#19B394]',
-    accentLight: 'border-[#19B394]/30',
+    subtle: 'border-[var(--border-subtle)]',
+    strong: 'border-[var(--border-strong)]',
+    primary: 'border-[var(--brand-primary)]',
   },
 
   // Hover states
   hover: {
-    bg: 'hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5',
-    bgStrong: 'hover:bg-[#0F6B4D]/10 dark:hover:bg-[#F8FAFC]/10',
-    accent: 'hover:bg-[#19B394]/10',
-    accentStrong: 'hover:bg-[#19B394]/20',
-    text: 'hover:text-[#19B394]',
-    border: 'hover:border-[#19B394]/50',
+    primary: 'hover:bg-[var(--brand-primary)]/90',
+    accent: 'hover:bg-[var(--brand-accent)]/90',
+    textPrimary: 'hover:text-[var(--brand-primary)]',
   },
 
   // Focus states
   focus: {
-    ring: 'focus:ring-[#19B394]',
+    ring: 'focus:ring-[var(--brand-accent)]',
     ringOffset: 'focus:ring-offset-2',
   },
 } as const;
 
 /**
  * Helper function to get color based on theme
+ * Note: With CSS variables, theme handling is automatic.
+ * This function is kept for compatibility but returns the CSS variable.
  */
 export function getColor(
   colorPath: string,
-  theme: 'light' | 'dark' = 'light'
+  _theme: 'light' | 'dark' = 'light'
 ): string {
   const paths = colorPath.split('.');
   let current: any = COLORS;
@@ -122,5 +98,6 @@ export function getColor(
   }
 
   if (typeof current === 'string') return current;
-  return current[theme] || current.light || '';
+  return '';
 }
+

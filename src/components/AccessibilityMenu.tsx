@@ -141,7 +141,7 @@ export function AccessibilityMenu() {
       {/* Accessibility Button */}
       <Button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-24 right-8 z-40 w-12 h-12 rounded-full bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] shadow-lg hover:shadow-xl transition-all duration-300 p-0 flex items-center justify-center"
+        className="fixed top-24 right-8 z-40 w-12 h-12 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 p-0 flex items-center justify-center"
         aria-label="Accessibility options"
       >
         <Accessibility className="w-6 h-6" />
@@ -149,12 +149,12 @@ export function AccessibilityMenu() {
 
       {/* Accessibility Panel */}
       {isOpen && (
-        <div className="fixed top-40 right-8 z-40 w-80 bg-white dark:bg-[#0A0D12] border-2 border-[#00D3A9]/20 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="fixed top-40 right-8 z-40 w-80 bg-card border-2 border-primary/20 rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-[#0A0D12]/10 dark:border-white/10 bg-[#00D3A9]/5">
+          <div className="flex items-center justify-between p-4 border-b border-subtle bg-primary/5">
             <div className="flex items-center gap-2">
-              <Accessibility className="w-5 h-5 text-[#00D3A9]" />
-              <h3 className="text-lg text-[#0A0D12] dark:text-white">Accessibility</h3>
+              <Accessibility className="w-5 h-5 text-primary" />
+              <h3 className="text-lg text-heading">Accessibility</h3>
             </div>
             <Button
               onClick={() => setIsOpen(false)}
@@ -173,10 +173,10 @@ export function AccessibilityMenu() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Type className="w-4 h-4 text-[#00D3A9]" />
-                  <span className="text-sm text-[#0A0D12] dark:text-white">Font Size</span>
+                  <Type className="w-4 h-4 text-primary" />
+                  <span className="text-sm text-heading">Font Size</span>
                 </div>
-                <span className="text-xs text-[#0A0D12]/60 dark:text-white/60">{fontSize}%</span>
+                <span className="text-xs text-body/60">{fontSize}%</span>
               </div>
               <div className="flex gap-2">
                 <Button
@@ -202,68 +202,68 @@ export function AccessibilityMenu() {
 
             {/* Narrator */}
             <div
-              className="flex items-center justify-between p-3 rounded-lg border border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9]/40 transition-colors cursor-pointer"
+              className="flex items-center justify-between p-3 rounded-lg border border-subtle hover:border-primary/40 transition-colors cursor-pointer"
               onClick={toggleNarrator}
             >
               <div className="flex items-center gap-2">
                 {isSpeaking ? (
-                  <Volume2 className="w-4 h-4 text-[#00D3A9] animate-pulse" />
+                  <Volume2 className="w-4 h-4 text-primary animate-pulse" />
                 ) : (
-                  <VolumeX className="w-4 h-4 text-[#00D3A9]" />
+                  <VolumeX className="w-4 h-4 text-primary" />
                 )}
-                <span className="text-sm text-[#0A0D12] dark:text-white">Screen Reader</span>
+                <span className="text-sm text-heading">Screen Reader</span>
               </div>
-              <div className={`w-10 h-6 rounded-full transition-colors ${narratorEnabled ? 'bg-[#00D3A9]' : 'bg-[#0A0D12]/20 dark:bg-white/20'}`}>
-                <div className={`w-5 h-5 bg-white dark:bg-[#0A0D12] rounded-full m-0.5 transition-transform ${narratorEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
+              <div className={`w-10 h-6 rounded-full transition-colors ${narratorEnabled ? 'bg-primary' : 'bg-body/20'}`}>
+                <div className={`w-5 h-5 bg-card rounded-full m-0.5 transition-transform ${narratorEnabled ? 'translate-x-4' : 'translate-x-0'}`} />
               </div>
             </div>
 
             {/* High Contrast */}
             <div
-              className="flex items-center justify-between p-3 rounded-lg border border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9]/40 transition-colors cursor-pointer"
+              className="flex items-center justify-between p-3 rounded-lg border border-subtle hover:border-primary/40 transition-colors cursor-pointer"
               onClick={toggleContrast}
             >
               <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-[#00D3A9]" />
-                <span className="text-sm text-[#0A0D12] dark:text-white">High Contrast</span>
+                <Eye className="w-4 h-4 text-primary" />
+                <span className="text-sm text-heading">High Contrast</span>
               </div>
-              <div className={`w-10 h-6 rounded-full transition-colors ${contrast ? 'bg-[#00D3A9]' : 'bg-[#0A0D12]/20 dark:bg-white/20'}`}>
-                <div className={`w-5 h-5 bg-white dark:bg-[#0A0D12] rounded-full m-0.5 transition-transform ${contrast ? 'translate-x-4' : 'translate-x-0'}`} />
+              <div className={`w-10 h-6 rounded-full transition-colors ${contrast ? 'bg-primary' : 'bg-body/20'}`}>
+                <div className={`w-5 h-5 bg-card rounded-full m-0.5 transition-transform ${contrast ? 'translate-x-4' : 'translate-x-0'}`} />
               </div>
             </div>
 
             {/* Highlight Links */}
             <div
-              className="flex items-center justify-between p-3 rounded-lg border border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9]/40 transition-colors cursor-pointer"
+              className="flex items-center justify-between p-3 rounded-lg border border-subtle hover:border-primary/40 transition-colors cursor-pointer"
               onClick={toggleLinkHighlight}
             >
               <div className="flex items-center gap-2">
-                <ZoomIn className="w-4 h-4 text-[#00D3A9]" />
-                <span className="text-sm text-[#0A0D12] dark:text-white">Highlight Links</span>
+                <ZoomIn className="w-4 h-4 text-primary" />
+                <span className="text-sm text-heading">Highlight Links</span>
               </div>
-              <div className={`w-10 h-6 rounded-full transition-colors ${highlightLinks ? 'bg-[#00D3A9]' : 'bg-[#0A0D12]/20 dark:bg-white/20'}`}>
-                <div className={`w-5 h-5 bg-white dark:bg-[#0A0D12] rounded-full m-0.5 transition-transform ${highlightLinks ? 'translate-x-4' : 'translate-x-0'}`} />
+              <div className={`w-10 h-6 rounded-full transition-colors ${highlightLinks ? 'bg-primary' : 'bg-body/20'}`}>
+                <div className={`w-5 h-5 bg-card rounded-full m-0.5 transition-transform ${highlightLinks ? 'translate-x-4' : 'translate-x-0'}`} />
               </div>
             </div>
 
             {/* Larger Cursor */}
             <div
-              className="flex items-center justify-between p-3 rounded-lg border border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9]/40 transition-colors cursor-pointer"
+              className="flex items-center justify-between p-3 rounded-lg border border-subtle hover:border-primary/40 transition-colors cursor-pointer"
               onClick={toggleLargerCursor}
             >
               <div className="flex items-center gap-2">
-                <MousePointer className="w-4 h-4 text-[#00D3A9]" />
-                <span className="text-sm text-[#0A0D12] dark:text-white">Larger Cursor</span>
+                <MousePointer className="w-4 h-4 text-primary" />
+                <span className="text-sm text-heading">Larger Cursor</span>
               </div>
-              <div className={`w-10 h-6 rounded-full transition-colors ${largerCursor ? 'bg-[#00D3A9]' : 'bg-[#0A0D12]/20 dark:bg-white/20'}`}>
-                <div className={`w-5 h-5 bg-white dark:bg-[#0A0D12] rounded-full m-0.5 transition-transform ${largerCursor ? 'translate-x-4' : 'translate-x-0'}`} />
+              <div className={`w-10 h-6 rounded-full transition-colors ${largerCursor ? 'bg-primary' : 'bg-body/20'}`}>
+                <div className={`w-5 h-5 bg-card rounded-full m-0.5 transition-transform ${largerCursor ? 'translate-x-4' : 'translate-x-0'}`} />
               </div>
             </div>
 
             {/* Narrator info */}
             {narratorEnabled && (
-              <div className="p-3 bg-[#00D3A9]/10 border border-[#00D3A9]/20 rounded-lg">
-                <p className="text-xs text-[#0A0D12] dark:text-white">
+              <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg">
+                <p className="text-xs text-heading">
                   Hover over elements to hear them read aloud
                 </p>
               </div>
@@ -273,7 +273,7 @@ export function AccessibilityMenu() {
             <Button
               onClick={resetAll}
               variant="outline"
-              className="w-full border-[#00D3A9]/40 text-[#00D3A9] hover:bg-[#00D3A9]/10"
+              className="w-full border-primary/40 text-primary hover:bg-primary/10"
             >
               <RotateCcw className="w-4 h-4 mr-2" />
               Reset All

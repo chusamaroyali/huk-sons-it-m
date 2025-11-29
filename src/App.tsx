@@ -18,9 +18,30 @@ const GetStartedPage = lazy(() => import("./pages/GetStartedPage").then(module =
 const ResourcesPage = lazy(() => import("./pages/ResourcesPage").then(module => ({ default: module.ResourcesPage })));
 const BlogsPage = lazy(() => import("./pages/BlogsPage").then(module => ({ default: module.BlogsPage })));
 const NewsPage = lazy(() => import("./pages/NewsPage").then(module => ({ default: module.NewsPage })));
-const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage").then(module => ({ default: module.PrivacyPolicyPage })));
-const TermsOfServicePage = lazy(() => import("./pages/TermsOfServicePage").then(module => ({ default: module.TermsOfServicePage })));
-const SecurityPage = lazy(() => import("./pages/SecurityPage").then(module => ({ default: module.SecurityPage })));
+// Legal Pages (New Structure)
+const LegalCenterPage = lazy(() => import("./pages/legal/LegalCenterPage").then(module => ({ default: module.LegalCenterPage })));
+const AcceptableUsePolicyPage = lazy(() => import("./pages/legal/AcceptableUsePolicyPage").then(module => ({ default: module.AcceptableUsePolicyPage })));
+const LegalEntityPage = lazy(() => import("./pages/legal/LegalEntityPage").then(module => ({ default: module.LegalEntityPage })));
+const PrivacyPolicyPage = lazy(() => import("./pages/legal/PrivacyPolicyPage").then(module => ({ default: module.PrivacyPolicyPage })));
+const TermsOfServicePage = lazy(() => import("./pages/legal/TermsOfServicePage").then(module => ({ default: module.TermsOfServicePage })));
+const SecurityPage = lazy(() => import("./pages/legal/SecurityPage").then(module => ({ default: module.SecurityPage })));
+const CookiePolicyPage = lazy(() => import("./pages/legal/CookiePolicyPage").then(module => ({ default: module.CookiePolicyPage })));
+const GDPRPage = lazy(() => import("./pages/legal/GDPRPage").then(module => ({ default: module.GDPRPage })));
+const CCPAPrivacyPage = lazy(() => import("./pages/legal/CCPAPrivacyPage").then(module => ({ default: module.CCPAPrivacyPage })));
+const DPAPage = lazy(() => import("./pages/legal/DPAPage").then(module => ({ default: module.DPAPage })));
+const IncidentResponsePage = lazy(() => import("./pages/legal/IncidentResponsePage").then(module => ({ default: module.IncidentResponsePage })));
+const SubprocessorsPage = lazy(() => import("./pages/legal/SubprocessorsPage").then(module => ({ default: module.SubprocessorsPage })));
+const ProcessingRolesPage = lazy(() => import("./pages/legal/ProcessingRolesPage").then(module => ({ default: module.ProcessingRolesPage })));
+const ExportCompliancePage = lazy(() => import("./pages/legal/ExportCompliancePage").then(module => ({ default: module.ExportCompliancePage })));
+const AccessibilityPage = lazy(() => import("./pages/legal/AccessibilityPage").then(module => ({ default: module.AccessibilityPage })));
+const AIPolicyPage = lazy(() => import("./pages/legal/AIPolicyPage").then(module => ({ default: module.AIPolicyPage })));
+const ESGPage = lazy(() => import("./pages/legal/ESGPage").then(module => ({ default: module.ESGPage })));
+const IPPolicyPage = lazy(() => import("./pages/legal/IPPolicyPage").then(module => ({ default: module.IPPolicyPage })));
+const TransparencyReportPage = lazy(() => import("./pages/legal/TransparencyReportPage").then(module => ({ default: module.TransparencyReportPage })));
+const WhistleblowerPage = lazy(() => import("./pages/legal/WhistleblowerPage").then(module => ({ default: module.WhistleblowerPage })));
+const LegalContactPage = lazy(() => import("./pages/legal/LegalContactPage").then(module => ({ default: module.LegalContactPage })));
+const LegalAppendicesPage = lazy(() => import("./pages/legal/LegalAppendicesPage").then(module => ({ default: module.LegalAppendicesPage })));
+
 const CloudInfrastructurePage = lazy(() => import("./pages/services/CloudInfrastructurePage").then(module => ({ default: module.CloudInfrastructurePage })));
 const AIAutomationPage = lazy(() => import("./pages/services/AIAutomationPage").then(module => ({ default: module.AIAutomationPage })));
 const DataInfrastructurePage = lazy(() => import("./pages/services/DataInfrastructurePage").then(module => ({ default: module.DataInfrastructurePage })));
@@ -73,8 +94,8 @@ const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail").then(module
 const CodeOfConductPage = lazy(() => import("./pages/legal/CodeOfConductPage").then(module => ({ default: module.CodeOfConductPage })));
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] dark:bg-[#0E1116]">
-    <div className="w-12 h-12 border-4 border-[#00D3A9] border-t-transparent rounded-full animate-spin"></div>
+  <div className="min-h-screen flex items-center justify-center bg-main">
+    <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
 
@@ -93,9 +114,9 @@ export default function App() {
     <ThemeProvider>
       <BrowserRouter>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#0E1116] text-[#0F6B4D] dark:text-[#F8FAFC] transition-colors duration-300">
+        <div className="min-h-screen bg-main transition-colors duration-300">
           <Header />
-          <main>
+          <main className="app-shell">
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -165,15 +186,43 @@ export default function App() {
                 <Route path="/industries/social-networking" element={<SocialNetworkingPage />} />
                 <Route path="/industries/data-centers-hosting" element={<DataCentersHostingPage />} />
 
-                {/* Legal */}
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-                <Route path="/security" element={<SecurityPage />} />
-                <Route path="/sla" element={<SLAPage />} />
-                <Route path="/sla/standard" element={<StandardSLAPage />} />
-                <Route path="/sla/enterprise" element={<EnterpriseSLAPage />} />
+                {/* Legal Center & Policies */}
+                <Route path="/legal" element={<LegalCenterPage />} />
+                <Route path="/legal/aup" element={<AcceptableUsePolicyPage />} />
+                <Route path="/legal/entity" element={<LegalEntityPage />} />
+                <Route path="/legal/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/legal/terms" element={<TermsOfServicePage />} />
+                <Route path="/legal/security" element={<SecurityPage />} />
+                <Route path="/legal/cookies" element={<CookiePolicyPage />} />
+                <Route path="/legal/gdpr" element={<GDPRPage />} />
+                <Route path="/legal/ccpa" element={<CCPAPrivacyPage />} />
+                <Route path="/legal/dpa" element={<DPAPage />} />
+                <Route path="/legal/incident-response" element={<IncidentResponsePage />} />
+                <Route path="/legal/subprocessors" element={<SubprocessorsPage />} />
+                <Route path="/legal/processing-roles" element={<ProcessingRolesPage />} />
+                <Route path="/legal/export-compliance" element={<ExportCompliancePage />} />
+                <Route path="/legal/accessibility" element={<AccessibilityPage />} />
+                <Route path="/legal/ai-policy" element={<AIPolicyPage />} />
+                <Route path="/legal/esg" element={<ESGPage />} />
+                <Route path="/legal/ip" element={<IPPolicyPage />} />
+                <Route path="/legal/transparency" element={<TransparencyReportPage />} />
+                <Route path="/legal/whistleblower" element={<WhistleblowerPage />} />
+                <Route path="/legal/contact" element={<LegalContactPage />} />
+                <Route path="/legal/appendices" element={<LegalAppendicesPage />} />
+                <Route path="/legal/sla" element={<SLAPage />} />
+                <Route path="/legal/sla/standard" element={<StandardSLAPage />} />
+                <Route path="/legal/sla/enterprise" element={<EnterpriseSLAPage />} />
+                <Route path="/legal/nda" element={<NDAPage />} />
+
+                {/* Legacy/Direct Legal Routes (Redirects or Direct Access) */}
+                <Route path="/privacy-policy" element={<Navigate to="/legal/privacy" replace />} />
+                <Route path="/terms-of-service" element={<Navigate to="/legal/terms" replace />} />
+                <Route path="/security" element={<Navigate to="/legal/security" replace />} />
+                <Route path="/sla" element={<Navigate to="/legal/sla" replace />} />
+                <Route path="/sla/standard" element={<Navigate to="/legal/sla/standard" replace />} />
+                <Route path="/sla/enterprise" element={<Navigate to="/legal/sla/enterprise" replace />} />
                 <Route path="/faq" element={<FAQPage />} />
-                <Route path="/nda" element={<NDAPage />} />
+                <Route path="/nda" element={<Navigate to="/legal/nda" replace />} />
                 <Route path="/sitemap" element={<SitemapPage />} />
                 <Route path="/code-of-conduct" element={<CodeOfConductPage />} />
 

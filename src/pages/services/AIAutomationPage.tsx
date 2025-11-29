@@ -96,13 +96,13 @@ export function AIAutomationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-main transition-colors duration-300">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
+            linear-gradient(to right, var(--primary) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--primary) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }} />
@@ -110,7 +110,7 @@ export function AIAutomationPage() {
 
       {/* Gradient Orbs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[120px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[100px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '10s' }} />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px] animate-pulse opacity-0 dark:opacity-100 pointer-events-none" style={{ animationDuration: '10s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 lg:py-40">
@@ -136,7 +136,7 @@ export function AIAutomationPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center mb-8"
             >
-              <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white via-[#0A0D12] dark:via-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-heading via-heading to-heading/60 bg-clip-text text-transparent">
                 Intelligent Automation
               </span>
               <br />
@@ -149,7 +149,7 @@ export function AIAutomationPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl md:text-2xl text-center text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed mb-12"
+              className="text-xl md:text-2xl text-center text-body/70 max-w-3xl mx-auto leading-relaxed mb-12"
             >
               Design intelligent automation systems that run 24/7, replacing repetitive manual workflows with machine-driven precision.
             </motion.p>
@@ -163,7 +163,7 @@ export function AIAutomationPage() {
             >
               <Button
                 onClick={handleGetStarted}
-                className="bg-purple-500 hover:bg-purple-600 dark:bg-[#00D3A9] dark:hover:bg-[#00D3A9]/90 text-white dark:text-[#0A0D12] px-10 py-6 text-lg group transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
+                className="bg-purple-500 hover:bg-purple-600 dark:bg-primary dark:hover:bg-primary/90 text-white dark:text-white px-10 py-6 text-lg group transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20"
               >
                 Start Your AI Journey
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -185,12 +185,12 @@ export function AIAutomationPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-6 md:p-8 text-center bg-white dark:bg-white/[0.03] border-[#0A0D12]/10 dark:border-white/10 hover:border-purple-500 dark:hover:border-[#00D3A9] transition-all duration-300 group">
+                <Card className="p-6 md:p-8 text-center bg-card border-subtle hover:border-purple-500 dark:hover:border-primary transition-all duration-300 group">
                   <div className="text-3xl md:text-4xl lg:text-5xl mb-2 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
                     {item.value}
                   </div>
-                  <div className="text-sm md:text-base text-[#0A0D12] dark:text-white mb-1">{item.metric}</div>
-                  <div className="text-xs text-[#0A0D12]/60 dark:text-white/60">{item.description}</div>
+                  <div className="text-sm md:text-base text-heading mb-1">{item.metric}</div>
+                  <div className="text-xs text-body/60">{item.description}</div>
                 </Card>
               </motion.div>
             ))}
@@ -208,10 +208,10 @@ export function AIAutomationPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-6">
-              Six Pillars of <span className="text-purple-500 dark:text-[#00D3A9]">AI Excellence</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-6">
+              Six Pillars of <span className="text-purple-500 dark:text-primary">AI Excellence</span>
             </h2>
-            <p className="text-lg md:text-xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-body/70 max-w-3xl mx-auto">
               Comprehensive automation services designed to transform your operations.
             </p>
           </motion.div>
@@ -225,34 +225,34 @@ export function AIAutomationPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="group p-8 md:p-10 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-purple-500 dark:hover:border-[#00D3A9] transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-full">
+                <Card className="group p-8 md:p-10 bg-card border-2 border-subtle hover:border-purple-500 dark:hover:border-primary transition-all duration-500 hover:shadow-2xl hover:shadow-purple-500/10 h-full">
                   {/* Icon & Number */}
                   <div className="flex items-start justify-between mb-6">
-                    <div className="w-16 h-16 bg-purple-500/10 dark:bg-[#00D3A9]/10 border-2 border-purple-500/20 dark:border-[#00D3A9]/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                      <feature.icon className="w-8 h-8 text-purple-500 dark:text-[#00D3A9]" />
+                    <div className="w-16 h-16 bg-purple-500/10 dark:bg-primary/10 border-2 border-purple-500/20 dark:border-primary/20 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <feature.icon className="w-8 h-8 text-purple-500 dark:text-primary" />
                     </div>
-                    <div className="px-3 py-1 bg-[#0A0D12]/5 dark:bg-white/5 rounded-full">
-                      <span className="text-xs text-[#0A0D12]/60 dark:text-white/60">0{index + 1}</span>
+                    <div className="px-3 py-1 bg-body/5 rounded-full">
+                      <span className="text-xs text-body/60">0{index + 1}</span>
                     </div>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-2xl md:text-3xl text-[#0A0D12] dark:text-white mb-2 group-hover:text-purple-500 dark:group-hover:text-[#00D3A9] transition-colors duration-300">
+                  <h3 className="text-2xl md:text-3xl text-heading mb-2 group-hover:text-purple-500 dark:group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-purple-500/80 dark:text-[#00D3A9]/80 mb-4 uppercase tracking-wider">
+                  <p className="text-sm text-purple-500/80 dark:text-primary/80 mb-4 uppercase tracking-wider">
                     {feature.subtitle}
                   </p>
-                  <p className="text-base text-[#0A0D12]/80 dark:text-white/80 mb-6 leading-relaxed">
+                  <p className="text-base text-body/80 mb-6 leading-relaxed">
                     {feature.description}
                   </p>
 
                   {/* Outcomes */}
-                  <div className="space-y-3 pt-6 border-t border-[#0A0D12]/10 dark:border-white/10">
+                  <div className="space-y-3 pt-6 border-t border-subtle">
                     {feature.outcomes.map((outcome, idx) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-purple-500 dark:text-[#00D3A9] flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-[#0A0D12]/80 dark:text-white/80">{outcome}</span>
+                        <CheckCircle2 className="w-5 h-5 text-purple-500 dark:text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-body/80">{outcome}</span>
                       </div>
                     ))}
                   </div>
@@ -273,23 +273,23 @@ export function AIAutomationPage() {
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#0A0D12] dark:text-white mb-6">
-              Ready to <span className="text-purple-500 dark:text-[#00D3A9]">Automate Your Workflows?</span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-heading mb-6">
+              Ready to <span className="text-purple-500 dark:text-primary">Automate Your Workflows?</span>
             </h2>
-            <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-body/70 mb-12 max-w-2xl mx-auto">
               Let's discuss your automation needs and create an intelligent system roadmap.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleGetStarted}
-                className="bg-purple-500 hover:bg-purple-600 dark:bg-[#00D3A9] dark:hover:bg-[#00D3A9]/90 text-white dark:text-[#0A0D12] px-10 py-6 text-lg group"
+                className="bg-purple-500 hover:bg-purple-600 dark:bg-primary dark:hover:bg-primary/90 text-white dark:text-white px-10 py-6 text-lg group"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 onClick={() => navigate('/solutions')}
-                className="bg-transparent border-2 border-[#0A0D12] dark:border-white hover:bg-[#0A0D12] dark:hover:bg-white text-[#0A0D12] dark:text-white hover:text-white dark:hover:text-[#0A0D12] px-10 py-6 text-lg"
+                className="bg-transparent border-2 border-heading hover:bg-heading text-heading hover:text-main px-10 py-6 text-lg"
               >
                 View All Solutions
               </Button>

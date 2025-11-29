@@ -42,6 +42,7 @@ export function Header() {
   const resources = [
     { label: 'Blog', path: '/resources/blogs' },
     { label: 'News', path: '/resources/news' },
+    { label: 'Legal Center', path: '/legal' },
   ];
 
   const company = [
@@ -59,8 +60,8 @@ export function Header() {
     <header
       className={`sticky top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#F8FAFC]/98 dark:bg-[#0B4D36]/98 backdrop-blur-xl shadow-lg border-b border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15'
-          : 'bg-[#F8FAFC]/80 dark:bg-[#0B4D36]/80 backdrop-blur-md border-b border-transparent'
+          ? 'bg-main/98 backdrop-blur-xl shadow-lg border-b border-subtle'
+          : 'bg-main/80 backdrop-blur-md border-b border-transparent'
       }`}
     >
       <div className="container-enterprise">
@@ -72,17 +73,17 @@ export function Header() {
             aria-label="HUK SONS IT Home"
           >
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#19B394] rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transition-transform group-hover:scale-110 duration-300">
                 <Globe2 className="w-6 h-6 text-white" />
               </div>
               <div>
                 <span
-                  className="text-[#0F6B4D] dark:text-[#F8FAFC] uppercase tracking-[0.04em] transition-colors group-hover:text-[#19B394] block leading-none font-bold text-[28px]"
+                  className="text-body uppercase tracking-[0.04em] transition-colors group-hover:text-primary block leading-none font-bold text-[28px]"
                 >
                   HUK SONS IT
                 </span>
                 <span
-                  className="text-[#0F6B4D]/60 dark:text-[#F8FAFC]/60 mt-1 transition-colors group-hover:text-[#0F6B4D] dark:group-hover:text-[#F8FAFC] block leading-none text-[11px] tracking-[-0.01em] font-normal"
+                  className="text-body/60 mt-1 transition-colors group-hover:text-body block leading-none text-[11px] tracking-[-0.01em] font-normal"
                 >
                   Built for Scale.
                 </span>
@@ -104,8 +105,8 @@ export function Header() {
                 aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive('/solutions')
-                    ? 'text-[#19B394] bg-[#19B394]/10'
-                    : 'text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-body/80 hover:text-primary hover:bg-body/5'
                 }`}
               >
                 Solutions
@@ -118,13 +119,13 @@ export function Header() {
                   activeDropdown === 'solutions' ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
               >
-                <div className="w-72 bg-white dark:bg-[#1A1E24] border border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15 rounded-xl shadow-2xl overflow-hidden">
+                <div className="w-72 bg-alt border border-subtle rounded-xl shadow-2xl overflow-hidden">
                   <div className="p-2">
                     {solutions.map((item) => (
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#19B394]/5 transition-all duration-200"
+                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-body/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
                       >
                         {item.label}
                       </button>
@@ -146,8 +147,8 @@ export function Header() {
                 aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   isActive('/resources')
-                    ? 'text-[#19B394] bg-[#19B394]/10'
-                    : 'text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-body/80 hover:text-primary hover:bg-body/5'
                 }`}
               >
                 Resources
@@ -159,13 +160,13 @@ export function Header() {
                   activeDropdown === 'resources' ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
               >
-                <div className="w-48 bg-white dark:bg-[#1A1E24] border border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15 rounded-xl shadow-2xl overflow-hidden">
+                <div className="w-48 bg-alt border border-subtle rounded-xl shadow-2xl overflow-hidden">
                   <div className="p-2">
                     {resources.map((item) => (
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#19B394]/5 transition-all duration-200"
+                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-body/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
                       >
                         {item.label}
                       </button>
@@ -186,8 +187,8 @@ export function Header() {
                 aria-haspopup="true"
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 ${
                   ['/about', '/why-us', '/leadership'].some(path => isActive(path))
-                    ? 'text-[#19B394] bg-[#19B394]/10'
-                    : 'text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-body/80 hover:text-primary hover:bg-body/5'
                 }`}
               >
                 Company
@@ -199,13 +200,13 @@ export function Header() {
                   activeDropdown === 'company' ? 'opacity-100 visible' : 'opacity-0 invisible'
                 }`}
               >
-                <div className="w-48 bg-white dark:bg-[#1A1E24] border border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15 rounded-xl shadow-2xl overflow-hidden">
+                <div className="w-48 bg-alt border border-subtle rounded-xl shadow-2xl overflow-hidden">
                   <div className="p-2">
                     {company.map((item) => (
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#19B394]/5 transition-all duration-200"
+                        className="w-full text-left px-4 py-3 rounded-lg text-sm text-body/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
                       >
                         {item.label}
                       </button>
@@ -220,8 +221,8 @@ export function Header() {
               onClick={() => handleNavigate('/industries')}
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 isActive('/industries')
-                  ? 'text-[#19B394] bg-[#19B394]/10'
-                  : 'text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5'
+                  ? 'text-primary bg-primary/10'
+                  : 'text-body/80 hover:text-primary hover:bg-body/5'
               }`}
             >
               Industries
@@ -230,7 +231,7 @@ export function Header() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="ml-2 p-2 rounded-lg text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5 transition-all duration-300"
+              className="ml-2 p-2 rounded-lg text-body/80 hover:text-primary hover:bg-body/5 transition-all duration-300"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -238,7 +239,8 @@ export function Header() {
             
             <Button
               onClick={() => handleNavigate('/contact-us')}
-              className="bg-[#19B394] hover:bg-[#19B394]/90 text-white ml-4 px-6 py-3 transition-all duration-300 hover:shadow-xl hover:shadow-[#19B394]/20"
+              variant="premium"
+              className="ml-4 px-6 py-3 transition-all duration-300"
             >
               Contact Us
             </Button>
@@ -248,13 +250,13 @@ export function Header() {
           <div className="lg:hidden flex items-center gap-2 z-50">
             <button
               onClick={toggleTheme}
-              className="text-[#0F6B4D] dark:text-[#F8FAFC] p-2 hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5 rounded-lg transition-colors"
+              className="text-body p-2 hover:bg-body/5 rounded-lg transition-colors"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
-              className="text-[#0F6B4D] dark:text-[#F8FAFC] p-2 hover:bg-[#0F6B4D]/5 dark:hover:bg-[#F8FAFC]/5 rounded-lg transition-colors"
+              className="text-body p-2 hover:bg-body/5 rounded-lg transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen ? "true" : "false"}
@@ -266,14 +268,14 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-[#F8FAFC]/98 dark:bg-[#0B4D36]/98 backdrop-blur-xl border-t border-[#0F6B4D]/12 dark:border-[#9BA1A7]/15 py-4 animate-fade-in">
+          <div className="lg:hidden bg-main/98 backdrop-blur-xl border-t border-subtle py-4 animate-fade-in">
             <nav className="flex flex-col gap-2">
               
               {/* Solutions Mobile */}
               <div className="px-4">
                 <button
                   onClick={() => setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions')}
-                  className="w-full flex items-center justify-between py-3 text-left text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80"
+                  className="w-full flex items-center justify-between py-3 text-left text-body/80"
                 >
                   <span>Solutions</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'solutions' ? 'rotate-180' : ''}`} />
@@ -284,7 +286,7 @@ export function Header() {
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70 hover:text-[#19B394] hover:bg-[#19B394]/5"
+                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-body/70 hover:text-primary hover:bg-primary/5"
                       >
                         {item.label}
                       </button>
@@ -297,7 +299,7 @@ export function Header() {
               <div className="px-4">
                 <button
                   onClick={() => setActiveDropdown(activeDropdown === 'resources' ? null : 'resources')}
-                  className="w-full flex items-center justify-between py-3 text-left text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80"
+                  className="w-full flex items-center justify-between py-3 text-left text-body/80"
                 >
                   <span>Resources</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} />
@@ -308,7 +310,7 @@ export function Header() {
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70 hover:text-[#19B394] hover:bg-[#19B394]/5"
+                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-body/70 hover:text-primary hover:bg-primary/5"
                       >
                         {item.label}
                       </button>
@@ -321,7 +323,7 @@ export function Header() {
               <div className="px-4">
                 <button
                   onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
-                  className="w-full flex items-center justify-between py-3 text-left text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80"
+                  className="w-full flex items-center justify-between py-3 text-left text-body/80"
                 >
                   <span>Company</span>
                   <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === 'company' ? 'rotate-180' : ''}`} />
@@ -332,7 +334,7 @@ export function Header() {
                       <button
                         key={item.path}
                         onClick={() => handleNavigate(item.path)}
-                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70 hover:text-[#19B394] hover:bg-[#19B394]/5"
+                        className="w-full text-left px-4 py-2 rounded-lg text-sm text-body/70 hover:text-primary hover:bg-primary/5"
                       >
                         {item.label}
                       </button>
@@ -346,8 +348,8 @@ export function Header() {
                 onClick={() => handleNavigate('/industries')}
                 className={`text-left px-4 py-3 rounded-lg transition-all duration-300 ${
                   isActive('/industries')
-                    ? 'text-[#19B394] bg-[#19B394]/10 mx-4'
-                    : 'text-[#0F6B4D]/80 dark:text-[#F8FAFC]/80 hover:text-[#19B394] hover:bg-[#19B394]/5 mx-4'
+                    ? 'text-primary bg-primary/10 mx-4'
+                    : 'text-body/80 hover:text-primary hover:bg-primary/5 mx-4'
                 }`}
               >
                 Industries
@@ -355,7 +357,8 @@ export function Header() {
 
               <Button
                 onClick={() => handleNavigate('/contact-us')}
-                className="bg-[#19B394] hover:bg-[#19B394]/90 text-white mx-4 mt-2"
+                variant="premium"
+                className="mx-4 mt-2"
               >
                 Contact Us
               </Button>

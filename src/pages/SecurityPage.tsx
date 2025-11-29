@@ -2,22 +2,16 @@ import { Shield, Lock, Key, CheckCircle2, FileCheck, AlertTriangle, Server, Glob
 
 export function SecurityPage() {
   return (
-    <div className="min-h-screen bg-[#0E1117] relative overflow-hidden">
+    <div className="min-h-screen bg-main relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
-          `,
-          backgroundSize: '80px 80px'
-        }} />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--primary)_1px,transparent_1px)] bg-[size:80px_80px]" />
       </div>
       
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '10s' }} />
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-[#00D3A9]/3 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '12s' }} />
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#00D3A9]/4 rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '7s' }} />
+      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '10s' }} />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '12s' }} />
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-primary/4 rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '7s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 lg:py-40">
@@ -25,30 +19,30 @@ export function SecurityPage() {
           <div className="max-w-5xl mx-auto">
             {/* Badge */}
             <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#00D3A9]/20 via-[#00D3A9]/10 to-transparent border-l-2 border-[#00D3A9] rounded-r-full">
-                <Shield className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-sm uppercase tracking-wider text-[#00D3A9]">Enterprise Security</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent border-l-2 border-primary rounded-r-full">
+                <Shield className="w-5 h-5 text-primary" />
+                <span className="text-sm uppercase tracking-wider text-primary">Enterprise Security</span>
               </div>
             </div>
 
             {/* Main Title */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center mb-8">
-              <span className="bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-heading via-heading to-heading/60 bg-clip-text text-transparent">
                 Security at
               </span>
               <br />
-              <span className="bg-gradient-to-r from-[#00D3A9] to-[#00D3A9]/60 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 HUK SONS IT
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-center text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-center text-body/70 max-w-3xl mx-auto">
               Enterprise-grade security practices protecting your infrastructure, data, and operations
             </p>
 
             {/* Divider */}
             <div className="flex justify-center mt-12">
-              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#00D3A9] to-transparent" />
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
             </div>
           </div>
         </div>
@@ -61,9 +55,9 @@ export function SecurityPage() {
             
             {/* Introduction */}
             <div className="space-y-6">
-              <div className="relative pl-8 border-l-2 border-[#00D3A9]/30">
-                <h2 className="text-4xl md:text-5xl text-white mb-6">Our Commitment to Security</h2>
-                <div className="space-y-4 text-lg md:text-xl text-white/70 leading-relaxed">
+              <div className="relative pl-8 border-l-2 border-primary/30">
+                <h2 className="text-4xl md:text-5xl text-heading mb-6">Our Commitment to Security</h2>
+                <div className="space-y-4 text-lg md:text-xl text-body/70 leading-relaxed">
                   <p>
                     At HUK SONS IT, security is not an afterthought—it's fundamental to everything we do. As a global technical transformation firm handling critical infrastructure, automation systems, and data platforms, we maintain enterprise-grade security practices that meet the highest industry standards.
                   </p>
@@ -77,8 +71,8 @@ export function SecurityPage() {
             {/* Security Framework - 4 Pillars */}
             <div className="space-y-12">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl text-white mb-4">Security Framework</h2>
-                <p className="text-xl text-white/60">Four pillars of comprehensive protection</p>
+                <h2 className="text-4xl md:text-5xl text-heading mb-4">Security Framework</h2>
+                <p className="text-xl text-body/60">Four pillars of comprehensive protection</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
@@ -87,7 +81,7 @@ export function SecurityPage() {
                     icon: Lock,
                     title: 'Data Protection',
                     desc: 'End-to-end encryption for data in transit and at rest using industry-standard protocols (TLS 1.3, AES-256)',
-                    color: 'from-[#00D3A9]/20 to-[#00D3A9]/5'
+                    color: 'from-primary/20 to-primary/5'
                   },
                   {
                     icon: Key,
@@ -109,16 +103,16 @@ export function SecurityPage() {
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/[0.05] to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
-                    <div className="relative p-8 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 rounded-2xl hover:border-[#00D3A9]/40 transition-all duration-500">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${item.color} border border-[#00D3A9]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                        <item.icon className="w-8 h-8 text-[#00D3A9]" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-body/5 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                    <div className="relative p-8 bg-gradient-to-br from-body/5 to-transparent border border-subtle rounded-2xl hover:border-primary/40 transition-all duration-500">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${item.color} border border-primary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                        <item.icon className="w-8 h-8 text-primary" />
                       </div>
-                      <h3 className="text-2xl text-white mb-4 flex items-center gap-2">
+                      <h3 className="text-2xl text-heading mb-4 flex items-center gap-2">
                         {item.title}
-                        <ArrowRight className="w-5 h-5 text-[#00D3A9] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                        <ArrowRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                       </h3>
-                      <p className="text-white/70 leading-relaxed">{item.desc}</p>
+                      <p className="text-body/70 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -128,13 +122,13 @@ export function SecurityPage() {
             {/* Compliance & Certifications */}
             <div className="space-y-8">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#00D3A9]/20 to-[#00D3A9]/5 border border-[#00D3A9]/30 rounded-2xl flex items-center justify-center">
-                  <FileCheck className="w-7 h-7 text-[#00D3A9]" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 rounded-2xl flex items-center justify-center">
+                  <FileCheck className="w-7 h-7 text-primary" />
                 </div>
-                <h2 className="text-4xl md:text-5xl text-white">Compliance & Certifications</h2>
+                <h2 className="text-4xl md:text-5xl text-heading">Compliance & Certifications</h2>
               </div>
 
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl text-body/90 mb-8">
                 We maintain compliance with international security standards and regulations:
               </p>
 
@@ -150,14 +144,14 @@ export function SecurityPage() {
                   { name: 'CSA', desc: 'Cloud Security' },
                   { name: 'PCI DSS', desc: 'Data Security' }
                 ].map((cert, idx) => (
-                  <div key={idx} className="group relative p-6 bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 rounded-xl hover:border-[#00D3A9]/50 hover:bg-white/[0.05] transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00D3A9]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
+                  <div key={idx} className="group relative p-6 bg-gradient-to-br from-body/5 to-transparent border border-subtle rounded-xl hover:border-primary/50 hover:bg-body/5 transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" />
                     <div className="relative">
                       <div className="flex items-center gap-2 mb-2">
-                        <CheckCircle2 className="w-5 h-5 text-[#00D3A9] group-hover:scale-110 transition-transform duration-300" />
-                        <span className="text-white">{cert.name}</span>
+                        <CheckCircle2 className="w-5 h-5 text-primary group-hover:scale-110 transition-transform duration-300" />
+                        <span className="text-heading">{cert.name}</span>
                       </div>
-                      <p className="text-sm text-white/60">{cert.desc}</p>
+                      <p className="text-sm text-body/60">{cert.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -166,7 +160,7 @@ export function SecurityPage() {
 
             {/* Security Practices */}
             <div className="space-y-12">
-              <h2 className="text-4xl md:text-5xl text-white text-center mb-12">Security Practices</h2>
+              <h2 className="text-4xl md:text-5xl text-heading text-center mb-12">Security Practices</h2>
 
               <div className="space-y-8">
                 {[
@@ -200,14 +194,14 @@ export function SecurityPage() {
                 ].map((section, idx) => (
                   <div key={idx} className="relative">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-3 h-3 bg-[#00D3A9] rounded-full animate-pulse" />
-                      <h3 className="text-2xl md:text-3xl text-white">{section.title}</h3>
+                      <div className="w-3 h-3 bg-primary rounded-full animate-pulse" />
+                      <h3 className="text-2xl md:text-3xl text-heading">{section.title}</h3>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-4 pl-6 border-l-2 border-[#00D3A9]/20">
+                    <div className="grid md:grid-cols-2 gap-4 pl-6 border-l-2 border-primary/20">
                       {section.items.map((item, itemIdx) => (
-                        <div key={itemIdx} className="flex items-start gap-3 p-4 bg-white/[0.02] border border-white/5 rounded-lg hover:border-[#00D3A9]/30 hover:bg-white/[0.03] transition-all duration-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#00D3A9] mt-2 flex-shrink-0" />
-                          <span className="text-white/70">{item}</span>
+                        <div key={itemIdx} className="flex items-start gap-3 p-4 bg-body/5 border border-subtle rounded-lg hover:border-primary/30 hover:bg-body/5 transition-all duration-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                          <span className="text-body/70">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -217,15 +211,15 @@ export function SecurityPage() {
             </div>
 
             {/* Incident Response */}
-            <div className="relative p-10 bg-gradient-to-br from-[#00D3A9]/[0.02] via-transparent to-transparent border border-[#00D3A9]/10 rounded-3xl">
+            <div className="relative p-10 bg-gradient-to-br from-primary/[0.02] via-transparent to-transparent border border-primary/10 rounded-3xl">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#00D3A9]/20 to-[#00D3A9]/5 border border-[#00D3A9]/30 rounded-2xl flex items-center justify-center">
-                  <Zap className="w-7 h-7 text-[#00D3A9]" />
+                <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 rounded-2xl flex items-center justify-center">
+                  <Zap className="w-7 h-7 text-primary" />
                 </div>
-                <h2 className="text-3xl md:text-4xl text-white">Incident Response</h2>
+                <h2 className="text-3xl md:text-4xl text-heading">Incident Response</h2>
               </div>
 
-              <p className="text-lg text-white/90 mb-6">
+              <p className="text-lg text-body/90 mb-6">
                 We maintain a comprehensive incident response plan to quickly identify, contain, and remediate security incidents:
               </p>
 
@@ -238,9 +232,9 @@ export function SecurityPage() {
                   { icon: '📢', text: 'Client notification protocols for security events' },
                   { icon: '🛡️', text: 'Automated threat containment and remediation' }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-5 bg-white/[0.02] border border-white/10 rounded-xl hover:border-[#00D3A9]/30 transition-all duration-300">
+                  <div key={idx} className="flex items-center gap-3 p-5 bg-body/5 border border-subtle rounded-xl hover:border-primary/30 transition-all duration-300">
                     <span className="text-2xl">{item.icon}</span>
-                    <span className="text-white/70">{item.text}</span>
+                    <span className="text-body/70">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -250,10 +244,10 @@ export function SecurityPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Eye className="w-8 h-8 text-[#00D3A9]" />
-                  <h2 className="text-3xl text-white">Employee Security</h2>
+                  <Eye className="w-8 h-8 text-primary" />
+                  <h2 className="text-3xl text-heading">Employee Security</h2>
                 </div>
-                <p className="text-lg text-white/70 leading-relaxed">
+                <p className="text-lg text-body/70 leading-relaxed">
                   Our team members undergo rigorous security training and follow strict security protocols:
                 </p>
                 <div className="space-y-3">
@@ -265,8 +259,8 @@ export function SecurityPage() {
                     'Secure device management'
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#00D3A9] flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-body/70">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -274,10 +268,10 @@ export function SecurityPage() {
 
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Globe2 className="w-8 h-8 text-[#00D3A9]" />
-                  <h2 className="text-3xl text-white">Physical Security</h2>
+                  <Globe2 className="w-8 h-8 text-primary" />
+                  <h2 className="text-3xl text-heading">Physical Security</h2>
                 </div>
-                <p className="text-lg text-white/70 leading-relaxed">
+                <p className="text-lg text-body/70 leading-relaxed">
                   Our global operations maintain strict physical security controls:
                 </p>
                 <div className="space-y-3">
@@ -289,8 +283,8 @@ export function SecurityPage() {
                     'Secure remote work environments'
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#00D3A9] flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">{item}</span>
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-body/70">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -298,9 +292,9 @@ export function SecurityPage() {
             </div>
 
             {/* Continuous Improvement */}
-            <div className="relative pl-8 border-l-2 border-[#00D3A9]/30 space-y-6">
-              <h2 className="text-3xl md:text-4xl text-white">Continuous Security Improvement</h2>
-              <p className="text-lg text-white/90">
+            <div className="relative pl-8 border-l-2 border-primary/30 space-y-6">
+              <h2 className="text-3xl md:text-4xl text-heading">Continuous Security Improvement</h2>
+              <p className="text-lg text-body/90">
                 Security is an ongoing commitment. We continuously improve our security posture through:
               </p>
               <div className="grid md:grid-cols-3 gap-4">
@@ -315,35 +309,35 @@ export function SecurityPage() {
                   'Training programs',
                   'Technology evaluation'
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 p-3 bg-white/[0.02] border border-white/5 rounded-lg">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#00D3A9]" />
-                    <span className="text-sm text-white/70">{item}</span>
+                  <div key={idx} className="flex items-center gap-2 p-3 bg-body/5 border border-subtle rounded-lg">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-sm text-body/70">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Responsible Disclosure */}
-            <div className="relative p-10 bg-gradient-to-br from-white/[0.02] to-transparent border border-white/5 rounded-3xl">
+            <div className="relative p-10 bg-gradient-to-br from-body/5 to-transparent border border-subtle rounded-3xl">
               <div className="flex items-center gap-3 mb-6">
-                <Shield className="w-8 h-8 text-[#00D3A9]" />
-                <h2 className="text-3xl md:text-4xl text-white">Responsible Disclosure</h2>
+                <Shield className="w-8 h-8 text-primary" />
+                <h2 className="text-3xl md:text-4xl text-heading">Responsible Disclosure</h2>
               </div>
               
-              <p className="text-lg text-white/70 mb-6 leading-relaxed">
+              <p className="text-lg text-body/70 mb-6 leading-relaxed">
                 We welcome responsible disclosure of security vulnerabilities. If you believe you have found a security issue, please contact us immediately.
               </p>
 
-              <div className="p-8 bg-gradient-to-br from-[#00D3A9]/10 to-transparent border-l-2 border-[#00D3A9] rounded-r-2xl">
+              <div className="p-8 bg-gradient-to-br from-primary/10 to-transparent border-l-2 border-primary rounded-r-2xl">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#00D3A9]/20 border border-[#00D3A9]/40 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Lock className="w-6 h-6 text-[#00D3A9]" />
+                  <div className="w-12 h-12 bg-primary/20 border border-primary/40 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Lock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-white mb-3">
-                      <strong>Security Team:</strong> <a href="mailto:security@huksons.com" className="text-[#00D3A9] hover:underline">security@huksons.com</a>
+                    <p className="text-heading mb-3">
+                      <strong>Security Team:</strong> <a href="mailto:security@huksons.com" className="text-primary hover:underline">security@huksons.com</a>
                     </p>
-                    <p className="text-white/60 text-sm">
+                    <p className="text-body/60 text-sm">
                       Please include detailed information about the vulnerability and steps to reproduce it. We commit to responding within 24 hours and will work with you to understand and address the issue promptly.
                     </p>
                   </div>
@@ -352,33 +346,33 @@ export function SecurityPage() {
             </div>
 
             {/* Contact Section */}
-            <div className="relative mt-24 p-12 bg-gradient-to-br from-[#00D3A9]/10 via-[#00D3A9]/5 to-transparent border border-[#00D3A9]/20 rounded-3xl overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#00D3A9]/10 rounded-full blur-3xl" />
+            <div className="relative mt-24 p-12 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 rounded-3xl overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
               <div className="relative">
-                <h2 className="text-3xl md:text-4xl text-white mb-6">Security Inquiries</h2>
-                <p className="text-lg text-white/70 mb-6">
+                <h2 className="text-3xl md:text-4xl text-heading mb-6">Security Inquiries</h2>
+                <p className="text-lg text-body/70 mb-6">
                   For security-related questions, compliance documentation, or to report a security concern:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
-                  <a href="mailto:security@huksons.com" className="flex items-center gap-2 p-4 bg-white/[0.05] border border-white/10 rounded-xl hover:border-[#00D3A9]/50 transition-all duration-300 group">
-                    <Shield className="w-5 h-5 text-[#00D3A9]" />
+                  <a href="mailto:security@huksons.com" className="flex items-center gap-2 p-4 bg-body/5 border border-subtle rounded-xl hover:border-primary/50 transition-all duration-300 group">
+                    <Shield className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="text-sm text-white/60">Security Team</div>
-                      <div className="text-[#00D3A9] group-hover:underline">security@huksons.com</div>
+                      <div className="text-sm text-body/60">Security Team</div>
+                      <div className="text-primary group-hover:underline">security@huksons.com</div>
                     </div>
                   </a>
-                  <a href="mailto:compliance@huksons.com" className="flex items-center gap-2 p-4 bg-white/[0.05] border border-white/10 rounded-xl hover:border-[#00D3A9]/50 transition-all duration-300 group">
-                    <FileCheck className="w-5 h-5 text-[#00D3A9]" />
+                  <a href="mailto:compliance@huksons.com" className="flex items-center gap-2 p-4 bg-body/5 border border-subtle rounded-xl hover:border-primary/50 transition-all duration-300 group">
+                    <FileCheck className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="text-sm text-white/60">Compliance</div>
-                      <div className="text-[#00D3A9] group-hover:underline">compliance@huksons.com</div>
+                      <div className="text-sm text-body/60">Compliance</div>
+                      <div className="text-primary group-hover:underline">compliance@huksons.com</div>
                     </div>
                   </a>
-                  <a href="mailto:info@huksons.com" className="flex items-center gap-2 p-4 bg-white/[0.05] border border-white/10 rounded-xl hover:border-[#00D3A9]/50 transition-all duration-300 group">
-                    <Globe2 className="w-5 h-5 text-[#00D3A9]" />
+                  <a href="mailto:info@huksons.com" className="flex items-center gap-2 p-4 bg-body/5 border border-subtle rounded-xl hover:border-primary/50 transition-all duration-300 group">
+                    <Globe2 className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="text-sm text-white/60">General</div>
-                      <div className="text-[#00D3A9] group-hover:underline">info@huksons.com</div>
+                      <div className="text-sm text-body/60">General</div>
+                      <div className="text-primary group-hover:underline">info@huksons.com</div>
                     </div>
                   </a>
                 </div>

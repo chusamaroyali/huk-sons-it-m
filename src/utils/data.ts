@@ -335,7 +335,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Building2,
     name: 'SaaS & Software Platforms',
     slug: 'saas-software',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Enterprise software and platform modernization for scalable, secure SaaS solutions.',
     averageEngagement: '$150K - $500K',
     challenges: [
@@ -355,7 +355,7 @@ export const INDUSTRIES: Industry[] = [
     icon: CreditCard,
     name: 'Fintech & Banking',
     slug: 'fintech-banking',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Financial services and payment infrastructure with enterprise-grade security.',
     averageEngagement: '$200K - $750K',
     challenges: [
@@ -375,7 +375,7 @@ export const INDUSTRIES: Industry[] = [
     icon: ShoppingCart,
     name: 'E-Commerce & Retail',
     slug: 'ecommerce-retail',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Retail technology and commerce platforms for omnichannel experiences.',
     averageEngagement: '$100K - $400K',
     challenges: [
@@ -395,7 +395,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Pill,
     name: 'Healthcare & Life Sciences',
     slug: 'healthcare-lifesciences',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Healthcare IT systems and pharmaceutical technology solutions.',
     averageEngagement: '$250K - $1M',
     challenges: [
@@ -415,7 +415,7 @@ export const INDUSTRIES: Industry[] = [
     icon: BarChart3,
     name: 'Analytics & AI Startups',
     slug: 'analytics-ai',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Data analytics and AI-driven platforms for intelligent insights.',
     averageEngagement: '$120K - $450K',
     challenges: [
@@ -435,7 +435,7 @@ export const INDUSTRIES: Industry[] = [
     icon: GraduationCap,
     name: 'Education Technology',
     slug: 'edtech',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'EdTech platforms and learning management systems.',
     averageEngagement: '$80K - $300K',
     challenges: [
@@ -455,7 +455,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Factory,
     name: 'Manufacturing & Industrial',
     slug: 'manufacturing-industrial',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Industrial IoT and smart manufacturing solutions.',
     averageEngagement: '$200K - $800K',
     challenges: [
@@ -475,7 +475,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Plane,
     name: 'Travel & Hospitality',
     slug: 'travel-hospitality',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Travel tech and hospitality management systems.',
     averageEngagement: '$100K - $400K',
     challenges: [
@@ -495,7 +495,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Home,
     name: 'Real Estate & PropTech',
     slug: 'real-estate-proptech',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Property technology and real estate platforms.',
     averageEngagement: '$120K - $500K',
     challenges: [
@@ -515,7 +515,7 @@ export const INDUSTRIES: Industry[] = [
     icon: TrendingUp,
     name: 'Investment & Asset Management',
     slug: 'investment-asset-management',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Wealth management and investment platforms.',
     averageEngagement: '$300K - $1.5M',
     challenges: [
@@ -535,7 +535,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Landmark,
     name: 'Insurance & Insurtech',
     slug: 'insurance-insurtech',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Insurance technology and risk management platforms.',
     averageEngagement: '$180K - $700K',
     challenges: [
@@ -555,7 +555,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Shield,
     name: 'Cybersecurity',
     slug: 'cybersecurity',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Security platforms and threat intelligence systems.',
     averageEngagement: '$200K - $900K',
     challenges: [
@@ -575,7 +575,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Cpu,
     name: 'Telecommunications',
     slug: 'telecommunications',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Telecom infrastructure and 5G network systems.',
     averageEngagement: '$250K - $1.2M',
     challenges: [
@@ -595,7 +595,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Users,
     name: 'Enterprise SaaS',
     slug: 'enterprise-saas',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'B2B enterprise software solutions and platforms.',
     averageEngagement: '$180K - $600K',
     challenges: [
@@ -615,7 +615,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Globe,
     name: 'Media & Entertainment',
     slug: 'media-entertainment',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Digital media platforms and content delivery networks.',
     averageEngagement: '$150K - $600K',
     challenges: [
@@ -635,7 +635,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Smartphone,
     name: 'Mobile & App Development',
     slug: 'mobile-app-dev',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Native and cross-platform mobile application development.',
     averageEngagement: '$100K - $400K',
     challenges: [
@@ -655,7 +655,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Video,
     name: 'Gaming & Esports',
     slug: 'gaming-esports',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Gaming platforms and esports infrastructure.',
     averageEngagement: '$120K - $500K',
     challenges: [
@@ -675,7 +675,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Zap,
     name: 'Energy & Utilities',
     slug: 'energy-utilities',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Smart grid and energy management systems.',
     averageEngagement: '$200K - $800K',
     challenges: [
@@ -695,7 +695,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Store,
     name: 'Retail Technology',
     slug: 'retail-technology',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Point of sale and retail management systems.',
     averageEngagement: '$100K - $400K',
     challenges: [
@@ -715,7 +715,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Heart,
     name: 'Wellness & Fitness',
     slug: 'wellness-fitness',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Health and wellness technology platforms.',
     averageEngagement: '$80K - $300K',
     challenges: [
@@ -735,7 +735,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Car,
     name: 'Automotive & Mobility',
     slug: 'automotive-mobility',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Connected vehicle and mobility platforms.',
     averageEngagement: '$180K - $700K',
     challenges: [
@@ -755,7 +755,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Package,
     name: 'Logistics & Supply Chain',
     slug: 'logistics-supply-chain',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Supply chain optimization and logistics platforms.',
     averageEngagement: '$150K - $600K',
     challenges: [
@@ -775,7 +775,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Wrench,
     name: 'Professional Services',
     slug: 'professional-services',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Service delivery and project management platforms.',
     averageEngagement: '$100K - $400K',
     challenges: [
@@ -795,7 +795,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Droplet,
     name: 'Agriculture & AgTech',
     slug: 'agriculture-agtech',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Agricultural technology and farm management systems.',
     averageEngagement: '$120K - $500K',
     challenges: [
@@ -815,7 +815,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Truck,
     name: 'Transportation & Freight',
     slug: 'transportation-freight',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Freight management and transportation logistics.',
     averageEngagement: '$150K - $600K',
     challenges: [
@@ -835,7 +835,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Building,
     name: 'Construction & Engineering',
     slug: 'construction-engineering',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Construction project management and engineering software.',
     averageEngagement: '$180K - $700K',
     challenges: [
@@ -855,7 +855,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Palette,
     name: 'Creative & Design',
     slug: 'creative-design',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Creative collaboration and design workflow platforms.',
     averageEngagement: '$80K - $300K',
     challenges: [
@@ -875,7 +875,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Radio,
     name: 'Broadcasting & Streaming',
     slug: 'broadcasting-streaming',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Live streaming and broadcast technology platforms.',
     averageEngagement: '$150K - $600K',
     challenges: [
@@ -895,7 +895,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Scale,
     name: 'Legal Technology',
     slug: 'legal-tech',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Legal practice management and compliance platforms.',
     averageEngagement: '$120K - $500K',
     challenges: [
@@ -915,7 +915,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Crown,
     name: 'Luxury & Premium Brands',
     slug: 'luxury-premium',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Premium brand e-commerce and customer experience.',
     averageEngagement: '$150K - $600K',
     challenges: [
@@ -935,7 +935,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Network,
     name: 'Social Networking',
     slug: 'social-networking',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Social platforms and community engagement systems.',
     averageEngagement: '$120K - $500K',
     challenges: [
@@ -955,7 +955,7 @@ export const INDUSTRIES: Industry[] = [
     icon: Server,
     name: 'Data Centers & Hosting',
     slug: 'data-centers-hosting',
-    color: '#00D3A9',
+    color: 'var(--brand-accent)',
     description: 'Data center infrastructure and managed hosting services.',
     averageEngagement: '$200K - $800K',
     challenges: [
@@ -1124,13 +1124,13 @@ export const getTechLogo = (toolName: string): { icon: string; color: string } =
     // Business Intelligence & Emerging Tech
     'Metabase': { icon: 'https://cdn.simpleicons.org/metabase/509EE3', color: '#509EE3' },
     'Superset': { icon: 'https://cdn.simpleicons.org/apachesuperset/20A6C9', color: '#20A6C9' },
-    'Process mining': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: '#00D3A9' },
+    'Process mining': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: 'var(--brand-accent)' },
     'Analytics tools': { icon: 'https://cdn.simpleicons.org/googleanalytics/E37400', color: '#E37400' },
     'Workflow engines': { icon: 'https://cdn.simpleicons.org/apacheairflow/017CEE', color: '#017CEE' },
     'Business intelligence': { icon: 'https://cdn.simpleicons.org/tableau/E97627', color: '#E97627' },
-    'Market research platforms': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: '#00D3A9' },
+    'Market research platforms': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: 'var(--brand-accent)' },
     'CRM systems': { icon: 'https://cdn.simpleicons.org/salesforce/00A1E0', color: '#00A1E0' },
-    'Strategic planning frameworks': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: '#00D3A9' },
+    'Strategic planning frameworks': { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: 'var(--brand-accent)' },
     
     // Emerging Technologies
     'Ethereum': { icon: 'https://cdn.simpleicons.org/ethereum/3C3C3D', color: '#3C3C3D' },
@@ -1147,7 +1147,7 @@ export const getTechLogo = (toolName: string): { icon: string; color: string } =
     'Backup solutions': { icon: 'https://cdn.simpleicons.org/backblaze/E51937', color: '#E51937' },
   };
   
-  return logoMap[toolName] || { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: '#00D3A9' };
+  return logoMap[toolName] || { icon: 'https://cdn.simpleicons.org/databricks/FF3621', color: 'var(--brand-accent)' };
 };
 
 // ============================================

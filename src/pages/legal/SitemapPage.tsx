@@ -87,15 +87,15 @@ const sitemapData = [
     category: 'Legal & Policies',
     icon: Shield,
     links: [
-      { title: 'Service Level Agreements', path: '/sla', description: 'Overview of Standard and Enterprise SLAs' },
-      { title: 'Standard SLA', path: '/sla/standard', description: '99.5% uptime, business hours support' },
-      { title: 'Enterprise SLA', path: '/sla/enterprise', description: '99.9% uptime, 24/7/365 premium support' },
+      { title: 'Service Level Agreements', path: '/legal/sla', description: 'Overview of Standard and Enterprise SLAs' },
+      { title: 'Standard SLA', path: '/legal/sla/standard', description: '99.5% uptime, business hours support' },
+      { title: 'Enterprise SLA', path: '/legal/sla/enterprise', description: '99.9% uptime, 24/7/365 premium support' },
       { title: 'Frequently Asked Questions', path: '/faq', description: 'Comprehensive FAQs about services and process' },
-      { title: 'Non-Disclosure Agreement', path: '/nda', description: 'NDA policy and confidentiality terms' },
-      { title: 'Privacy Policy', path: '/privacy-policy', description: 'How we collect, use, and protect your data' },
-      { title: 'Terms of Service', path: '/terms-of-service', description: 'Terms and conditions for using HUK SONS IT solutions' },
+      { title: 'Non-Disclosure Agreement', path: '/legal/nda', description: 'NDA policy and confidentiality terms' },
+      { title: 'Privacy Policy', path: '/legal/privacy', description: 'How we collect, use, and protect your data' },
+      { title: 'Terms of Service', path: '/legal/terms', description: 'Terms and conditions for using HUK SONS IT solutions' },
       { title: 'Code of Conduct', path: '/code-of-conduct', description: 'Our professional code of conduct' },
-      { title: 'Security', path: '/security', description: 'Security policies and practices' },
+      { title: 'Security', path: '/legal/security', description: 'Security policies and practices' },
       { title: 'Sitemap', path: '/sitemap', description: 'Complete site navigation (you are here)' }
     ]
   },
@@ -122,7 +122,7 @@ export function SitemapPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-main transition-colors duration-300">
       <SEOHead
         title="Sitemap | Complete Site Navigation | HUK SONS IT"
         description="Complete sitemap of HUK SONS IT website. Navigate through all services, industries, resources, legal pages, and company information."
@@ -132,10 +132,16 @@ export function SitemapPage() {
 
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00D3A9_1px,transparent_1px),linear-gradient(to_bottom,#00D3A9_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px'
+        }} />
       </div>
 
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[120px] animate-pulse pointer-events-none [animation-duration:8s]" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
@@ -147,20 +153,30 @@ export function SitemapPage() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full mb-8">
-                <Map className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-sm uppercase tracking-wider text-[#00D3A9]">Complete Site Navigation</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full mb-8">
+                <Map className="w-5 h-5 text-primary" />
+                <span className="text-sm uppercase tracking-wider text-primary">Complete Site Navigation</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8">
-                <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-heading dark:from-white to-heading/60 dark:to-white/60 bg-clip-text text-transparent">
                   Sitemap
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-body dark:text-white/70 max-w-3xl mx-auto leading-relaxed mb-8">
                 Navigate through all pages, services, industries, and resources on the HUK SONS IT website.
               </p>
+
+              <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg max-w-3xl mx-auto mb-8">
+                <p className="text-sm text-body dark:text-white/80">
+                  <strong>Subsidiary Disclosure:</strong> HUK SONS IT operates as a legally separate subsidiary of HUK SONS. When you engage with this site or our services, you are interacting with HUK SONS IT (a subsidiary of HUK SONS) as the contracting entity, unless a signed agreement specifies otherwise.
+                </p>
+              </div>
+
+              <div className="text-sm text-muted-foreground dark:text-white/60">
+                Last Updated: November 29, 2025
+              </div>
             </motion.div>
           </div>
         </div>
@@ -178,12 +194,12 @@ export function SitemapPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: sectionIdx * 0.1 }}
               >
-                <Card className="p-8 md:p-10 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10">
+                <Card className="p-8 md:p-10 bg-card border-2 border-subtle">
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 bg-[#00D3A9]/10 rounded-xl flex items-center justify-center">
-                      <section.icon className="w-6 h-6 text-[#00D3A9]" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <section.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h2 className="text-3xl text-[#0A0D12] dark:text-white">{section.category}</h2>
+                    <h2 className="text-3xl text-heading dark:text-white">{section.category}</h2>
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -191,15 +207,15 @@ export function SitemapPage() {
                       <button
                         key={linkIdx}
                         onClick={() => handleNavigate(link.path, link.external)}
-                        className="group p-4 bg-[#0A0D12]/5 dark:bg-white/[0.02] hover:bg-[#00D3A9]/10 border-2 border-transparent hover:border-[#00D3A9]/30 rounded-lg text-left transition-all duration-300"
+                        className="group p-4 bg-muted/50 dark:bg-white/[0.02] hover:bg-primary/10 border-2 border-transparent hover:border-primary/30 rounded-lg text-left transition-all duration-300"
                       >
                         <div className="flex items-start justify-between gap-2 mb-2">
-                          <div className="text-[#0A0D12] dark:text-white group-hover:text-[#00D3A9] transition-colors">
+                          <div className="text-heading dark:text-white group-hover:text-primary transition-colors">
                             {link.title}
                           </div>
-                          <ChevronRight className="w-4 h-4 text-[#00D3A9] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0" />
+                          <ChevronRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0" />
                         </div>
-                        <div className="text-sm text-[#0A0D12]/60 dark:text-white/60 group-hover:text-[#0A0D12]/80 dark:group-hover:text-white/80 transition-colors">
+                        <div className="text-sm text-muted-foreground dark:text-white/60 group-hover:text-heading/80 dark:group-hover:text-white/80 transition-colors">
                           {link.description}
                         </div>
                       </button>
@@ -213,11 +229,11 @@ export function SitemapPage() {
       </section>
 
       {/* Stats */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-muted/50 dark:bg-white/[0.02]">
         <div className="container-enterprise relative z-10">
           <div className="max-w-5xl mx-auto">
-            <Card className="p-8 md:p-10 bg-gradient-to-br from-[#00D3A9]/10 to-transparent border-2 border-[#00D3A9]/20 text-center">
-              <h2 className="text-3xl text-[#0A0D12] dark:text-white mb-8">HUK SONS IT at a Glance</h2>
+            <Card className="p-8 md:p-10 bg-gradient-to-br from-primary/10 to-transparent border-2 border-primary/20 text-center">
+              <h2 className="text-3xl text-heading dark:text-white mb-8">HUK SONS IT at a Glance</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 {[
                   { value: '1500+', label: 'Projects Delivered', desc: 'Consultation to execution' },
@@ -226,9 +242,9 @@ export function SitemapPage() {
                   { value: '8', label: 'Core Solutions', desc: 'Strategic offerings' }
                 ].map((stat, idx) => (
                   <div key={idx}>
-                    <div className="text-4xl text-[#00D3A9] mb-2">{stat.value}</div>
-                    <div className="text-[#0A0D12] dark:text-white mb-1">{stat.label}</div>
-                    <div className="text-sm text-[#0A0D12]/60 dark:text-white/60">{stat.desc}</div>
+                    <div className="text-4xl text-primary mb-2">{stat.value}</div>
+                    <div className="text-heading dark:text-white mb-1">{stat.label}</div>
+                    <div className="text-sm text-muted-foreground dark:text-white/60">{stat.desc}</div>
                   </div>
                 ))}
               </div>

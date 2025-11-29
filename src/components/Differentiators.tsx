@@ -28,8 +28,8 @@ const differentiators = [
 
 export function Differentiators() {
   return (
-    <section id="differentiators" className="py-24 bg-[#F8FAFC] dark:bg-[#0E1116] transition-colors duration-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="differentiators" className="py-24 bg-main transition-colors duration-300">
+      <div className="container-enterprise">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.div
@@ -39,7 +39,7 @@ export function Differentiators() {
             transition={{ duration: 0.5 }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 bg-[#19B394]/10 border border-[#19B394]/30 rounded-full text-[#19B394] uppercase tracking-wider">
+            <span className="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary uppercase tracking-wider">
               Strategic Differentiators
             </span>
           </motion.div>
@@ -48,16 +48,16 @@ export function Differentiators() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-6"
+            className="text-4xl sm:text-5xl text-heading mb-6"
           >
-            What Makes HUK SONS IT <span className="text-[#19B394]">Different</span>
+            What Makes HUK SONS IT <span className="text-primary">Different</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70"
+            className="text-xl text-body/70"
           >
             We're not another agency. We're technical partners who deliver measurable outcomes, not just deliverables.
           </motion.p>
@@ -72,17 +72,17 @@ export function Differentiators() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-white/[0.03] border-2 border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10 rounded-lg p-6 hover:border-[#19B394] transition-all duration-300 hover:shadow-lg group"
+              className="bg-card border-2 border-subtle rounded-lg p-6 hover:border-primary transition-all duration-300 hover:shadow-lg group"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1">
-                  <CheckCircle2 className="w-6 h-6 text-[#19B394]" />
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-2 group-hover:text-[#19B394] transition-colors">
+                  <h3 className="text-xl text-heading mb-2 group-hover:text-primary transition-colors">
                     {item.pillar}
                   </h3>
-                  <p className="text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70">{item.description}</p>
+                  <p className="text-body/70">{item.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -95,9 +95,9 @@ export function Differentiators() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-[#0F6B4D]/5 dark:bg-[#0E1116] rounded-2xl p-8 lg:p-12 border border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10"
+          className="bg-body/5 rounded-2xl p-8 lg:p-12 border border-subtle"
         >
-          <h3 className="text-3xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-8 text-center">Operating Model</h3>
+          <h3 className="text-3xl text-heading mb-8 text-center">Operating Model</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -124,10 +124,10 @@ export function Differentiators() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-white/5 border border-[#0F6B4D]/12 dark:border-[#F8FAFC]/10 rounded-lg p-6 hover:border-[#19B394] transition-all duration-300"
+                className="bg-card border border-subtle rounded-lg p-6 hover:border-primary transition-all duration-300"
               >
-                <div className="text-[#19B394] mb-2">{item.title}</div>
-                <p className="text-[#0F6B4D]/70 dark:text-[#F8FAFC]/70">{item.description}</p>
+                <div className="text-primary mb-2">{item.title}</div>
+                <p className="text-body/70">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -140,7 +140,7 @@ export function Differentiators() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl text-[#0F6B4D] dark:text-[#F8FAFC] mb-8 text-center"
+            className="text-3xl text-heading mb-8 text-center"
           >
             Core Values
           </motion.h3>
@@ -154,10 +154,10 @@ export function Differentiators() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-[#19B394]/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl text-[#19B394]">{value[0]}</span>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-2xl text-primary">{value[0]}</span>
                 </div>
-                <div className="text-[#0F6B4D] dark:text-[#F8FAFC]">{value}</div>
+                <div className="text-heading">{value}</div>
               </motion.div>
             ))}
           </div>

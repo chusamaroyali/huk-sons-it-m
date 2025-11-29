@@ -210,7 +210,7 @@ export function FAQPage() {
   })).filter(category => category.faqs.length > 0);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0E1117] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-main transition-colors duration-300">
       <SEOHead
         title="Frequently Asked Questions (FAQ) | HUK SONS IT"
         description="Find answers to common questions about HUK SONS IT's solutions, pricing, process, SLA commitments, and technical capabilities. Comprehensive FAQ covering DevOps, cloud migration, and enterprise transformation."
@@ -222,14 +222,14 @@ export function FAQPage() {
       <div className="absolute inset-0 opacity-0 dark:opacity-[0.03] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(to right, #00D3A9 1px, transparent 1px),
-            linear-gradient(to bottom, #00D3A9 1px, transparent 1px)
+            linear-gradient(to right, hsl(var(--primary)) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(var(--primary)) 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }} />
       </div>
 
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00D3A9]/5 dark:bg-[#00D3A9]/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
@@ -241,34 +241,40 @@ export function FAQPage() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#00D3A9]/10 border border-[#00D3A9]/30 rounded-full mb-8">
-                <HelpCircle className="w-5 h-5 text-[#00D3A9]" />
-                <span className="text-sm uppercase tracking-wider text-[#00D3A9]">Frequently Asked Questions</span>
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 border border-primary/30 rounded-full mb-8">
+                <HelpCircle className="w-5 h-5 text-primary" />
+                <span className="text-sm uppercase tracking-wider text-primary">Frequently Asked Questions</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-8">
-                <span className="bg-gradient-to-r from-[#0A0D12] dark:from-white to-[#0A0D12]/60 dark:to-white/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-heading dark:from-white to-heading/60 dark:to-white/60 bg-clip-text text-transparent">
                   Questions?
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#00D3A9] to-[#00D3A9]/60 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                   We Have Answers
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl text-[#0A0D12]/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed mb-8">
+              <p className="text-xl md:text-2xl text-body dark:text-white/70 max-w-3xl mx-auto leading-relaxed mb-8">
                 Everything you need to know about HUK SONS IT's solutions, pricing, process, and technical capabilities.
               </p>
 
+              <div className="p-4 bg-primary/5 border border-primary/20 rounded-lg max-w-3xl mx-auto mb-8">
+                <p className="text-sm text-body dark:text-white/80">
+                  <strong>Subsidiary Disclosure:</strong> HUK SONS IT operates as a legally separate subsidiary of HUK SONS. When you engage with this site or our services, you are interacting with HUK SONS IT (a subsidiary of HUK SONS) as the contracting entity, unless a signed agreement specifies otherwise.
+                </p>
+              </div>
+
               {/* Search Bar */}
               <div className="max-w-2xl mx-auto relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#0A0D12]/40 dark:text-white/40" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground/60 dark:text-white/40" />
                 <input
                   type="text"
                   placeholder="Search questions..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-xl text-[#0A0D12] dark:text-white placeholder-[#0A0D12]/40 dark:placeholder-white/40 focus:outline-none focus:border-[#00D3A9] transition-colors"
+                  className="w-full pl-12 pr-4 py-4 bg-white dark:bg-white/[0.03] border-2 border-subtle dark:border-white/10 rounded-xl text-heading dark:text-white placeholder-muted-foreground/60 dark:placeholder-white/40 focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
             </motion.div>
@@ -288,9 +294,9 @@ export function FAQPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
               >
-                <Card className="p-8 md:p-10 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10">
-                  <h2 className="text-3xl text-[#0A0D12] dark:text-white mb-6 flex items-center gap-3">
-                    <category.icon className="w-8 h-8 text-[#00D3A9]" />
+                <Card className="p-8 md:p-10 bg-card border-2 border-subtle">
+                  <h2 className="text-3xl text-heading dark:text-white mb-6 flex items-center gap-3">
+                    <category.icon className="w-8 h-8 text-primary" />
                     {category.category}
                   </h2>
 
@@ -300,22 +306,22 @@ export function FAQPage() {
                       return (
                         <div
                           key={faqIndex}
-                          className="border-2 border-[#0A0D12]/10 dark:border-white/10 rounded-lg overflow-hidden hover:border-[#00D3A9]/40 transition-all duration-300"
+                          className="border-2 border-subtle dark:border-white/10 rounded-lg overflow-hidden hover:border-primary/40 transition-all duration-300"
                         >
                           <button
                             onClick={() => toggleFAQ(categoryIndex, faqIndex)}
-                            className="w-full p-6 text-left flex items-center justify-between gap-4 bg-[#0A0D12]/5 dark:bg-white/[0.02] hover:bg-[#00D3A9]/5 transition-colors"
+                            className="w-full p-6 text-left flex items-center justify-between gap-4 bg-muted/50 dark:bg-white/[0.02] hover:bg-primary/5 transition-colors"
                           >
-                            <span className="text-lg text-[#0A0D12] dark:text-white">{faq.question}</span>
+                            <span className="text-lg text-heading dark:text-white">{faq.question}</span>
                             <ChevronDown
-                              className={`w-5 h-5 text-[#00D3A9] flex-shrink-0 transition-transform duration-300 ${
+                              className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
                                 isOpen ? 'rotate-180' : ''
                               }`}
                             />
                           </button>
                           {isOpen && (
-                            <div className="p-6 bg-white dark:bg-[#0E1117] border-t-2 border-[#0A0D12]/10 dark:border-white/10">
-                              <p className="text-[#0A0D12]/80 dark:text-white/80 leading-relaxed">
+                            <div className="p-6 bg-white dark:bg-main border-t-2 border-subtle dark:border-white/10">
+                              <p className="text-body dark:text-white/80 leading-relaxed">
                                 {faq.answer}
                               </p>
                             </div>
@@ -329,11 +335,11 @@ export function FAQPage() {
             ))}
 
             {filteredCategories.length === 0 && (
-              <Card className="p-12 text-center bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10">
-                <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 mb-4">
+              <Card className="p-12 text-center bg-card border-2 border-subtle">
+                <p className="text-xl text-body dark:text-white/70 mb-4">
                   No results found for "{searchTerm}"
                 </p>
-                <p className="text-[#0A0D12]/60 dark:text-white/60">
+                <p className="text-muted-foreground dark:text-white/60">
                   Try a different search term or contact us directly
                 </p>
               </Card>
@@ -343,7 +349,7 @@ export function FAQPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="relative py-16 md:py-24 bg-[#0A0D12]/5 dark:bg-white/[0.02]">
+      <section className="relative py-16 md:py-24 bg-muted/50 dark:bg-white/[0.02]">
         <div className="container-enterprise relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -352,39 +358,39 @@ export function FAQPage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#0A0D12] dark:text-white mb-6">
-              Still Have <span className="text-[#00D3A9]">Questions?</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-heading dark:text-white mb-6">
+              Still Have <span className="text-primary">Questions?</span>
             </h2>
-            <p className="text-xl text-[#0A0D12]/70 dark:text-white/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-body dark:text-white/70 mb-8 max-w-2xl mx-auto">
               We're here to help. Contact us directly and we'll respond within 24 hours.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300">
-                <Mail className="w-10 h-10 text-[#00D3A9] mx-auto mb-4" />
-                <h3 className="text-lg text-[#0A0D12] dark:text-white mb-2">Email Us</h3>
-                <p className="text-sm text-[#0A0D12]/70 dark:text-white/70 mb-4">info@huksons.com</p>
-                <p className="text-xs text-[#00D3A9]">Response within 24 hours</p>
+              <Card className="p-6 bg-card border-2 border-subtle hover:border-primary transition-all duration-300">
+                <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-lg text-heading dark:text-white mb-2">Email Us</h3>
+                <p className="text-sm text-body dark:text-white/70 mb-4">info@huksons.com</p>
+                <p className="text-xs text-primary">Response within 24 hours</p>
               </Card>
 
-              <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300">
-                <Phone className="w-10 h-10 text-[#00D3A9] mx-auto mb-4" />
-                <h3 className="text-lg text-[#0A0D12] dark:text-white mb-2">Schedule Call</h3>
-                <p className="text-sm text-[#0A0D12]/70 dark:text-white/70 mb-4">Book a free consultation</p>
-                <p className="text-xs text-[#00D3A9]">30-minute sessions available</p>
+              <Card className="p-6 bg-card border-2 border-subtle hover:border-primary transition-all duration-300">
+                <Phone className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-lg text-heading dark:text-white mb-2">Schedule Call</h3>
+                <p className="text-sm text-body dark:text-white/70 mb-4">Book a free consultation</p>
+                <p className="text-xs text-primary">30-minute sessions available</p>
               </Card>
 
-              <Card className="p-6 bg-white dark:bg-white/[0.03] border-2 border-[#0A0D12]/10 dark:border-white/10 hover:border-[#00D3A9] transition-all duration-300">
-                <MessageSquare className="w-10 h-10 text-[#00D3A9] mx-auto mb-4" />
-                <h3 className="text-lg text-[#0A0D12] dark:text-white mb-2">Get Started</h3>
-                <p className="text-sm text-[#0A0D12]/70 dark:text-white/70 mb-4">Submit project inquiry</p>
-                <p className="text-xs text-[#00D3A9]">Receive proposal within 48 hours</p>
+              <Card className="p-6 bg-card border-2 border-subtle hover:border-primary transition-all duration-300">
+                <MessageSquare className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-lg text-heading dark:text-white mb-2">Get Started</h3>
+                <p className="text-sm text-body dark:text-white/70 mb-4">Submit project inquiry</p>
+                <p className="text-xs text-primary">Receive proposal within 48 hours</p>
               </Card>
             </div>
 
             <Button
               onClick={() => navigate('/get-started')}
-              className="bg-[#00D3A9] hover:bg-[#00D3A9]/90 text-[#0A0D12] px-10 py-6 text-lg group"
+              className="bg-primary hover:bg-primary/90 text-heading px-10 py-6 text-lg group"
             >
               Contact Us Today
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
